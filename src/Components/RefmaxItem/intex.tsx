@@ -11,7 +11,11 @@ interface IRefmaxItem {
 
 const RefmaxItem = ({refmax, onRefPress}: IRefmaxItem) => {
   return (
-    <View style={Styles.container}>
+    <View
+      style={[
+        Styles.container,
+        refmax.premium ? {borderColor: '#C5EC31', borderWidth: 2} : null,
+      ]}>
       <TouchableOpacity
         onPress={() => onRefPress(refmax)}
         style={Styles.refContainer}>

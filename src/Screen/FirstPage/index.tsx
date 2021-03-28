@@ -125,6 +125,8 @@ const FirstPage = ({navigation}) => {
       price: '10000',
       userId: '1',
       state: 'Sinop',
+      premium:true,
+
     },
     {
       id: '9',
@@ -170,6 +172,7 @@ const FirstPage = ({navigation}) => {
       price: '10000',
       userId: '1',
       state: 'Sinop',
+      premium:true,
     },
   ];
   return (

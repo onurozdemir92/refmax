@@ -1,10 +1,10 @@
 import {Dimensions, StyleSheet} from 'react-native';
 const {height, width} = Dimensions.get('window');
 const Styles = StyleSheet.create({
-    container:{
-flex:1,
-backgroundColor:'white'
-    },
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
   header: {
     width: '100%',
     height: height * 0.08,
@@ -39,6 +39,67 @@ backgroundColor:'white'
     height: '100%',
     paddingHorizontal: 10,
     justifyContent: 'center',
+  },
+  profileContainer: {
+    width: width,
+    height: height * 0.08,
+    flexDirection: 'row',
+  },
+  profileImageContainer: {
+    height: '100%',
+    width: height * 0.08,
+    marginLeft: 10,
+  },
+  profileImage: {
+    width: '100%',
+    height: '100%',
+    borderRadius: (height * 0.08) / 2,
+  },
+  profileInfoContainer: {
+    flex: 2,
+    justifyContent: 'space-between',
+    paddingVertical: 5,
+  },
+  profileNameText: {
+    marginLeft: 10,
+    fontWeight: 'bold',
+    color: '#858585',
+  },
+  profileStarContainer: {
+    flexDirection: 'row',
+    marginLeft: 10,
+  },
+  profileIconsContainer: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+  profiloIcon: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  imageIndexContainer: {
+    position: 'absolute',
+    width: width,
+    alignItems: 'center',
+    bottom: 10,
+  },
+  indexSubContainer: {
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    backgroundColor: 'rgba(0,0,0,.4)',
+    borderRadius: 30,
+  },
+  imageIndexText: {
+    color: 'white',
+  },
+  refInfoContainer: {
+    width: width,
+    paddingHorizontal: 10,
+    marginTop: 5,
+  },
+  refInfoTitleText: {
+    fontSize: 20,
   },
 });
 

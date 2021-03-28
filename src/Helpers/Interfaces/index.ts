@@ -9,6 +9,8 @@ export interface IUser {
   sellerName?: string;
   score?: TScore;
 }
+
+type TRefStatus = 0 | 1 | 2;
 export interface IRef {
   id?: string;
   userId?: string;
@@ -20,4 +22,7 @@ export interface IRef {
   state?: string;
   district?: string;
   images?: string[];
+  date?: Date;
+  status?: TRefStatus;
+  premium?: boolean;
 }
