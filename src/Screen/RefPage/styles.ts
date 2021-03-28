@@ -96,10 +96,54 @@ const Styles = StyleSheet.create({
   refInfoContainer: {
     width: width,
     paddingHorizontal: 10,
-    marginTop: 5,
+    marginTop: 20,
+    borderBottomColor: 'rgba(0,0,0,.2)',
+    borderBottomWidth: 1,
+    paddingBottom: 10,
   },
   refInfoTitleText: {
     fontSize: 20,
+    fontWeight: 'bold',
+  },
+  refInfodescriptionText: {
+    fontSize: 16,
+    marginTop: 10,
+  },
+  addressText: {
+    color: 'rgba(0,0,0,.4)',
+    marginTop: 20,
+  },
+  dateText: {
+    color: 'rgba(0,0,0,.4)',
+  },
+  similarTitleText: {
+    marginLeft: 10,
+    fontSize: 20,
+    color: 'black',
+    fontWeight: 'bold',
+  },
+  proportyContainer: {
+    width: width,
+    paddingHorizontal: 10,
+    marginVertical: 20,
+  },
+  proportySubContainer: {
+    flexDirection: 'row',
+    marginTop:5
+  },
+  proportyStringContainer: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  proportyTitle: {
+    fontSize: 17,
+    color: 'black',
+    marginLeft:5
+  },
+  proportySubTitle: {
+    color: 'rgba(0,0,0,.4)',
+    marginLeft:5
+
   },
 });
 

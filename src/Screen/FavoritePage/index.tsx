@@ -134,6 +134,7 @@ const FavoritePage = ({navigation}) => {
       userId: '1',
       state: 'Sinop',
       date: new Date(),
+
     },
     {
       id: '8',
@@ -149,6 +150,7 @@ const FavoritePage = ({navigation}) => {
       price: '10000',
       userId: '1',
       state: 'Sinop',
+      premium: true,
       status: 2,
       date: new Date(),
     },

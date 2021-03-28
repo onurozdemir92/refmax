@@ -30,7 +30,7 @@ const RefmaxHorizontalItem = ({refmax, navigation}: IRefmaxHorizontalItem) => {
         style={Styles.subContainer}>
         <View style={Styles.imageContainer}>
           <Image style={Styles.image} source={{uri: refmax.images[0]}} />
-          {refmax.status !== 0 ? (
+          {refmax.status !== 0 && refmax.status ? (
             <View style={Styles.statusContainer}>
               <Text style={Styles.statusText}>
                 {getStatusText(refmax.status)}

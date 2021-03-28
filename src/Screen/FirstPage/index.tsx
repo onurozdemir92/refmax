@@ -185,7 +185,7 @@ const FirstPage = ({navigation}) => {
         renderItem={({item, index}) => {
           return (
             <RefmaxItem
-              onRefPress={(e: IRef) => navigation.navigate('RefPage', {Ref: e})}
+              onRefPress={(e: IRef) => navigation.push('RefPage', {Ref: e})}
               refmax={item}
             />
           );

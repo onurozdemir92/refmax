@@ -10,12 +10,15 @@ import {
   Dimensions,
   Linking,
   Share,
+  FlatList,
 } from 'react-native';
 import {IRef} from '../../Helpers/Interfaces';
 import IconI from 'react-native-vector-icons/Ionicons';
 import IconMI from 'react-native-vector-icons/MaterialIcons';
-
+import moment from 'moment';
 import Styles from './styles';
+import RefmaxItem from '../../Components/RefmaxItem/intex';
+import RefmaxHorizontalItem from '../../Components/RefmaxHorizontalItem';
 
 const RefPage = ({route, navigation}) => {
   const [imageIndex, setImageIndex] = useState<number>(1);
@@ -26,7 +29,98 @@ const RefPage = ({route, navigation}) => {
     setImageIndex(index + 1);
   };
   const refmax: IRef = route.params.Ref;
-
+  const data: IRef[] = [
+    {
+      id: '1',
+      country: 'Türkiye',
+      description: 'dlaksdk kdlasdlşasklş lsldkalskd lksaldkla klaskdlaskd',
+      district: 'gerze',
+      favorite: true,
+      title: 'Apple 6s Plus',
+      images: [
+        'https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+        'https://productimages.hepsiburada.net/s/7/550/9749718859826.jpg/format:webp',
+      ],
+      price: '10000',
+      userId: '1',
+      state: 'Sinop',
+    },
+    {
+      id: '2',
+      country: 'Türkiye',
+      description: 'dlaksdk kdlasdlşasklş lsldkalskd lksaldkla klaskdlaskd',
+      district: 'gerze',
+      favorite: false,
+      title: 'Apple 6s Plus',
+      images: [
+        'https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+        'https://productimages.hepsiburada.net/s/7/550/9749718859826.jpg/format:webp',
+      ],
+      price: '10000',
+      userId: '1',
+      state: 'Sinop',
+    },
+    {
+      id: '3',
+      country: 'Türkiye',
+      description: 'dlaksdk kdlasdlşasklş lsldkalskd lksaldkla klaskdlaskd',
+      district: 'gerze',
+      favorite: true,
+      title: 'Apple 6s Plus',
+      images: [
+        'https://images.pexels.com/photos/2478248/pexels-photo-2478248.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+        'https://images.pexels.com/photos/2150/sky-space-dark-galaxy.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      ],
+      price: '10000',
+      userId: '1',
+      state: 'Sinop',
+    },
+    {
+      id: '4',
+      country: 'Türkiye',
+      description: 'dlaksdk kdlasdlşasklş lsldkalskd lksaldkla klaskdlaskd',
+      district: 'gerze',
+      favorite: true,
+      title: 'Apple 6s Plus',
+      images: [
+        'https://productimages.hepsiburada.net/s/62/320/110000004108548.jpg',
+        'https://productimages.hepsiburada.net/s/7/550/9749718859826.jpg/format:webp',
+      ],
+      price: '10000',
+      userId: '1',
+      state: 'Sinop',
+    },
+    {
+      id: '5',
+      country: 'Türkiye',
+      description: 'dlaksdk kdlasdlşasklş lsldkalskd lksaldkla klaskdlaskd',
+      district: 'gerze',
+      favorite: true,
+      title: 'Apple 6s Plus',
+      images: [
+        'https://productimages.hepsiburada.net/s/6/320/9713620058162.jpg',
+        'https://productimages.hepsiburada.net/s/7/550/9749718859826.jpg/format:webp',
+      ],
+      price: '10000',
+      userId: '1',
+      state: 'Sinop',
+    },
+    {
+      id: '6',
+      country: 'Türkiye',
+      description: 'dlaksdk kdlasdlşasklş lsldkalskd lksaldkla klaskdlaskd',
+      district: 'gerze',
+      favorite: true,
+      title: 'Apple 6s Plus',
+      images: [
+        'https://productimages.hepsiburada.net/s/57/320/11305732341810.jpg',
+        'https://productimages.hepsiburada.net/s/7/550/9749718859826.jpg/format:webp',
+      ],
+      price: '10000',
+      userId: '1',
+      state: 'Sinop',
+    },
+  ];
   return (
     <SafeAreaView style={Styles.container}>
       <View style={Styles.header}>
@@ -110,6 +204,54 @@ const RefPage = ({route, navigation}) => {
         </View>
         <View style={Styles.refInfoContainer}>
           <Text style={Styles.refInfoTitleText}>{refmax.title}</Text>
+          <Text style={Styles.refInfodescriptionText}>
+            {refmax.description}
+          </Text>
+          <Text
+            style={
+              Styles.addressText
+            }>{`${refmax.state}, ${refmax.district} `}</Text>
+          <Text style={Styles.dateText}>
+            {moment(refmax.date).format('DD MMMM, HH:mm')}
+          </Text>
+        </View>
+        <View style={Styles.proportyContainer}>
+          <View style={Styles.proportySubContainer}>
+            <View style={Styles.proportyStringContainer}>
+              <Text style={Styles.proportyTitle}>Kilometre</Text>
+            </View>
+            <View style={Styles.proportyStringContainer}>
+              <Text style={Styles.proportySubTitle}>120000</Text>
+            </View>
+          </View>
+          <View style={Styles.proportySubContainer}>
+            <View style={Styles.proportyStringContainer}>
+              <Text style={Styles.proportyTitle}>Renk</Text>
+            </View>
+            <View style={Styles.proportyStringContainer}>
+              <Text style={Styles.proportySubTitle}>Mavi</Text>
+            </View>
+          </View>
+          <View style={Styles.proportySubContainer}>
+            <View style={Styles.proportyStringContainer}>
+              <Text style={Styles.proportyTitle}>Kapı</Text>
+            </View>
+            <View style={Styles.proportyStringContainer}>
+              <Text style={Styles.proportySubTitle}>4</Text>
+            </View>
+          </View>
+        </View>
+        <Text style={Styles.similarTitleText}>Benzer İlanlar</Text>
+        <View>
+          {data.map((item: IRef, index) => {
+            return (
+              <RefmaxHorizontalItem
+                key={index}
+                refmax={item}
+                navigation={navigation}
+              />
+            );
+          })}
         </View>
       </ScrollView>
     </SafeAreaView>
