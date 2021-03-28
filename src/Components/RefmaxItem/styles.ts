@@ -10,7 +10,6 @@ const Styles = StyleSheet.create({
   },
   refContainer: {
     flex: 1,
-    backgroundColor: 'white',
     borderRadius: 5,
     // shadowColor: '#000',
     // shadowOffset: {
