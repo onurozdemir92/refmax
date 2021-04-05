@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import {
   SafeAreaView,
@@ -12,15 +12,14 @@ import {
   Share,
   FlatList,
 } from 'react-native';
-import {IRef} from '../../Helpers/Interfaces';
+import { IRef } from '../../Helpers/Interfaces';
 import IconI from 'react-native-vector-icons/Ionicons';
 import IconMI from 'react-native-vector-icons/MaterialIcons';
 import moment from 'moment';
 import Styles from './styles';
-import RefmaxItem from '../../Components/RefmaxItem/intex';
 import RefmaxHorizontalItem from '../../Components/RefmaxHorizontalItem';
 
-const RefPage = ({route, navigation}) => {
+const RefPage = ({ route, navigation }) => {
   const [imageIndex, setImageIndex] = useState<number>(1);
   const setIndex = e => {
     const index: number = parseInt(
@@ -154,7 +153,7 @@ const RefPage = ({route, navigation}) => {
                 <Image
                   resizeMode="contain"
                   style={Styles.image}
-                  source={{uri: image}}
+                  source={{ uri: image }}
                 />
               </View>
             ))}

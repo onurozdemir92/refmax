@@ -26,3 +26,16 @@ export interface IRef {
   status?: TRefStatus;
   premium?: boolean;
 }
+
+export interface ICategory {
+  /**kategori id'si */
+  id?: string;
+  /** kullanıcıya gösterilecek kategori öğenin string verisi */
+  text?: string;
+ /** kategoriye ait icon veya jsx elementi */  
+  icon?: JSX.Element;
+  /** kategori öğesinin arkaplan rengi */
+  backgroundColor?: string;
+  /** kategori öğesinin yazı rengi */
+  textColor?: string;
+}

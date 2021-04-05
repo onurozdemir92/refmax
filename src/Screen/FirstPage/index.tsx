@@ -1,10 +1,49 @@
 import React from 'react';
-import {SafeAreaView, FlatList, StatusBar} from 'react-native';
+import {
+  SafeAreaView,
+  FlatList,
+  StatusBar,
+  View,
+  Text,
+  ScrollView,
+} from 'react-native';
+import CategoryItem from '../../Components/CategoryItem';
 import Header from '../../Components/Header';
 import RefmaxItem from '../../Components/RefmaxItem/intex';
-import {IRef} from '../../Helpers/Interfaces';
+import {ICategory, IRef} from '../../Helpers/Interfaces';
+import Styles from './styles';
 
 const FirstPage = ({navigation}) => {
+  const categorys: ICategory[] = [
+    {
+      id: '1',
+      text: 'daire',
+      icon: <Text>icon</Text>,
+      backgroundColor: '#19EAA2',
+      textColor: 'white',
+    },
+    {
+      id: '2',
+      text: 'rezidans',
+      icon: <Text>icon</Text>,
+      backgroundColor: '#19D4EA',
+      textColor: 'white',
+    },
+    {
+      id: '3',
+      text: 'Elektronik',
+      icon: <Text>icon</Text>,
+      backgroundColor: '#176CEE',
+      textColor: 'white',
+    },
+    {
+      id: '4',
+      text: 'Ücretsiz',
+      icon: <Text>icon</Text>,
+      backgroundColor: '#7B0FEE',
+      textColor: 'white',
+    },
+  ];
   const data: IRef[] = [
     {
       id: '1',
@@ -14,7 +53,7 @@ const FirstPage = ({navigation}) => {
       favorite: true,
       title: 'Apple 6s Plus',
       images: [
-        'https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+        'https://images.pexels.com/photos/2478248/pexels-photo-2478248.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
         'https://productimages.hepsiburada.net/s/7/550/9749718859826.jpg/format:webp',
       ],
       price: '10000',
@@ -125,8 +164,7 @@ const FirstPage = ({navigation}) => {
       price: '10000',
       userId: '1',
       state: 'Sinop',
-      premium:true,
-
+      premium: true,
     },
     {
       id: '9',
@@ -172,13 +210,20 @@ const FirstPage = ({navigation}) => {
       price: '10000',
       userId: '1',
       state: 'Sinop',
-      premium:true,
+      premium: true,
     },
   ];
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <StatusBar barStyle="dark-content" backgroundColor="white" />
-      <Header />
+      {/* <Header /> */}
+      <View style={Styles.CategoryContainer}>
+        <ScrollView style={{paddingVertical:5}} horizontal={true}>
+          {categorys.map((item: ICategory) => (
+            <CategoryItem data={item} />
+          ))}
+        </ScrollView>
+      </View>
       <FlatList
         data={data}
         numColumns={2}

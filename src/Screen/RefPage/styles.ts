@@ -24,8 +24,8 @@ const Styles = StyleSheet.create({
     height: '100%',
   },
   backIcon: {
-    width: 30,
-    height: 30,
+    width: 50,
+    height: '100%',
     borderRadius: 15,
     justifyContent: 'center',
     alignItems: 'center',
@@ -44,6 +44,7 @@ const Styles = StyleSheet.create({
     width: width,
     height: height * 0.08,
     flexDirection: 'row',
+    marginTop: 20,
   },
   profileImageContainer: {
     height: '100%',
@@ -129,7 +130,7 @@ const Styles = StyleSheet.create({
   },
   proportySubContainer: {
     flexDirection: 'row',
-    marginTop:5
+    marginTop: 5,
   },
   proportyStringContainer: {
     flex: 1,
@@ -138,12 +139,11 @@ const Styles = StyleSheet.create({
   proportyTitle: {
     fontSize: 17,
     color: 'black',
-    marginLeft:5
+    marginLeft: 5,
   },
   proportySubTitle: {
     color: 'rgba(0,0,0,.4)',
-    marginLeft:5
-
+    marginLeft: 5,
   },
 });
 
