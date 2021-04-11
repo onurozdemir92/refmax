@@ -3,7 +3,7 @@ const Colors: any = {
   Black: '#000',
   Black04: 'rgba(0, 0, 0, 0.4)',
   MainColor: '#5B8',
-  StatusBar: '#5679',
+  StatusBar: '#0D47A1',
   Background: '#E9EAED',
   Orange: '#F9A825',
   Turquaz: '#0097A7',
