@@ -129,7 +129,7 @@ const Styles = StyleSheet.create({
   },
   proportySubContainer: {
     flexDirection: 'row',
-    marginTop:5
+    marginTop: 5,
   },
   proportyStringContainer: {
     flex: 1,
@@ -138,12 +138,11 @@ const Styles = StyleSheet.create({
   proportyTitle: {
     fontSize: 17,
     color: 'black',
-    marginLeft:5
+    marginLeft: 5,
   },
   proportySubTitle: {
     color: 'rgba(0,0,0,.4)',
-    marginLeft:5
-
+    marginLeft: 5,
   },
 });
 
