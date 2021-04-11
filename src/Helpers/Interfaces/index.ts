@@ -32,10 +32,10 @@ export interface ICategory {
   id?: string;
   /** kullanıcıya gösterilecek kategori öğenin string verisi */
   text?: string;
- /** kategoriye ait icon veya jsx elementi */  
-  icon?: JSX.Element;
   /** kategori öğesinin arkaplan rengi */
   backgroundColor?: string;
   /** kategori öğesinin yazı rengi */
   textColor?: string;
+  /** kategori resimi */
+  image?:string;
 }

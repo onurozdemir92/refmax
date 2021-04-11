@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, ImageBackground} from 'react-native';
 import {ICategory} from '../../Helpers/Interfaces';
 import Styles from './Styles';
 
@@ -10,13 +10,22 @@ interface ICategoryItem {
 const CategoryItem = ({data}: ICategoryItem) => {
   return (
     <TouchableOpacity
+      activeOpacity={0.9}
       style={[
         Styles.container,
         {backgroundColor: data.backgroundColor || null},
       ]}>
-      <Text style={[{color: data.textColor}, Styles.categoryText]}>
-        {data.text}
-      </Text>
+      <ImageBackground
+        resizeMode="cover"
+        blurRadius={0.5}
+        style={Styles.backgrounImage}
+        source={{
+          uri: data.image,
+        }}>
+        <Text style={[{color: data.textColor}, Styles.categoryText]}>
+          {data.text}
+        </Text>
+      </ImageBackground>
     </TouchableOpacity>
   );
 };
