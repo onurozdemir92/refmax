@@ -1,6 +1,7 @@
 const Colors: any = {
   White: '#FFF',
   Black: '#000',
+  Black04: 'rgba(0, 0, 0, 0.4)',
   MainColor: '#5B8',
   StatusBar: '#5679',
   Background: '#E9EAED',
