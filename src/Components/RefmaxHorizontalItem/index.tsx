@@ -26,6 +26,7 @@ const RefmaxHorizontalItem = ({refmax, navigation}: IRefmaxHorizontalItem) => {
         refmax.premium ? {backgroundColor: '#FCFAB0'} : null,
       ]}>
       <TouchableOpacity
+        activeOpacity={0.95}
         onPress={() => navigation.push('RefPage', {Ref: refmax})}
         style={Styles.subContainer}>
         <View style={Styles.imageContainer}>

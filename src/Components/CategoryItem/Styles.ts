@@ -5,22 +5,27 @@ const {width, height} = Dimensions.get('window');
 const Styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    borderRadius: 5,
+    borderRadius: 30,
     marginLeft: 10,
-    width: width * 0.25,
-    height: height * 0.15,
+    paddingHorizontal: 15,
+    marginTop: 5,
+    marginBottom: 5,
+    backgroundColor: 'white',
+    paddingVertical: 7,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
   },
   categoryText: {
     fontWeight: 'bold',
     fontSize: 15,
-    marginLeft:10,
-    marginBottom:10
-  },
-  backgrounImage: {
-    width: '100%',
-    height: '100%',
-    borderRadius: 5,
-    justifyContent:'flex-end'
+    color: '#8E8D8D',
   },
 });
 

@@ -12,8 +12,8 @@ const SplashScreen = ({navigation}) => {
   });
   return (
     <SafeAreaView style={Styles.container}>
-      <StatusBar backgroundColor="#3996E3" barStyle="light-content" />
-      <Text style={Styles.logoText}>jetqui</Text>
+      <StatusBar backgroundColor="#F44336" barStyle="light-content" />
+      <Text style={Styles.logoText}>jetmio</Text>
     </SafeAreaView>
   );
 };

@@ -8,6 +8,7 @@ import {
   Text,
   Dimensions,
   Linking,
+  Share,
 } from 'react-native';
 import {IRef} from '../../Helpers/Interfaces';
 import IconI from 'react-native-vector-icons/Ionicons';
@@ -24,6 +25,26 @@ const RefPage = ({route, navigation}) => {
     );
     setImageIndex(index + 1);
   };
+
+  const onShare = async (message: string) => {
+    try {
+      const result = await Share.share({
+        message: message,
+      });
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // shared with activity type of result.activityType
+        } else {
+          // shared
+        }
+      } else if (result.action === Share.dismissedAction) {
+        // dismissed
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
   const refmax: IRef = route.params.Ref;
   const data: IRef[] = [
     {
@@ -131,7 +152,7 @@ const RefPage = ({route, navigation}) => {
               <IconMI name="favorite" size={25} />
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => console.log('share')}>
+          <TouchableOpacity onPress={() => onShare('wwww.google.com')}>
             <View style={Styles.headerButton}>
               <IconI name="share-social" size={25} />
             </View>

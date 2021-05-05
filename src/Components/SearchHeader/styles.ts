@@ -3,10 +3,17 @@ import {StyleSheet} from 'react-native';
 const Styles = StyleSheet.create({
   container: {
     width: '100%',
-    flexDirection: 'row',
     paddingVertical: 5,
-    borderWidth: 2,
-    borderColor: 'rgba(0,0,0,.1)',
+
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  subContainer: {
+    width: '90%',
+    flexDirection: 'row',
+    borderWidth: 1,
+    borderColor: '#B6B5B4',
+    borderRadius: 5,
   },
   inputContainer: {
     flex: 1,

@@ -9,23 +9,8 @@ interface ICategoryItem {
 
 const CategoryItem = ({data}: ICategoryItem) => {
   return (
-    <TouchableOpacity
-      activeOpacity={0.9}
-      style={[
-        Styles.container,
-        {backgroundColor: data.backgroundColor || null},
-      ]}>
-      <ImageBackground
-        resizeMode="cover"
-        blurRadius={0.5}
-        style={Styles.backgrounImage}
-        source={{
-          uri: data.image,
-        }}>
-        <Text style={[{color: data.textColor}, Styles.categoryText]}>
-          {data.text}
-        </Text>
-      </ImageBackground>
+    <TouchableOpacity activeOpacity={0.7} style={[Styles.container]}>
+      <Text style={Styles.categoryText}>{data.text}</Text>
     </TouchableOpacity>
   );
 };
