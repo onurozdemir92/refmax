@@ -190,7 +190,7 @@ const RefPage = ({route, navigation}) => {
               style={Styles.profileImage}
               source={{
                 uri:
-                  'https://images.unsplash.com/photo-1583243552802-94ccb4200150?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjN8fHByb2ZpbGV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+                  'https://images.unsplash.com/photo-1519806141527-e3c35efe2c1c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDl8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
               }}
             />
           </View>

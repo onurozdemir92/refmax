@@ -28,8 +28,8 @@ const FirstPage = ({navigation}) => {
               showsHorizontalScrollIndicator={false}
               style={{paddingVertical: 5}}
               horizontal={true}>
-              {categorys.map((item: ICategory) => (
-                <CategoryItem data={item} />
+              {categorys.map((item: ICategory, index: number) => (
+                <CategoryItem key={index} data={item} />
               ))}
             </ScrollView>
           </View>
