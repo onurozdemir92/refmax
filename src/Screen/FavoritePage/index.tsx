@@ -1,7 +1,8 @@
 import React from 'react';
-import {FlatList, SafeAreaView, Text} from 'react-native';
+import {FlatList, SafeAreaView, Text, View} from 'react-native';
 import RefmaxHorizontalItem from '../../Components/RefmaxHorizontalItem';
 import {IRef} from '../../Helpers/Interfaces';
+import Styles from './styles';
 
 const FavoritePage = ({navigation}) => {
   const data: IRef[] = [
@@ -134,7 +135,6 @@ const FavoritePage = ({navigation}) => {
       userId: '1',
       state: 'Sinop',
       date: new Date(),
-
     },
     {
       id: '8',
@@ -207,7 +207,10 @@ const FavoritePage = ({navigation}) => {
     },
   ];
   return (
-    <SafeAreaView>
+    <SafeAreaView style={Styles.container}>
+      <View style={Styles.headerContainer}>
+        <Text style={Styles.headerTitle}>Beğenilenler</Text>
+      </View>
       <FlatList
         data={data}
         renderItem={item => {
