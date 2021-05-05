@@ -1,22 +1,48 @@
 import React from 'react';
-import {SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Styles from './styles';
+import PlatformSpecificStatusBar from '../../Components/StatusBar';
+import styles from './styles';
 
 const MyPage = () => {
   return (
-    <SafeAreaView style={Styles.container}>
-      <View style={Styles.header}>
-        <View style={Styles.headerTitleContainer}>
-          <Text style={Styles.headerTitleText}>Profile</Text>
+    <View style={styles.container}>
+      <PlatformSpecificStatusBar />
+      <View style={styles.header1}>
+        <View style={styles.headerTitleContainer}>
+          <Text style={styles.headerTitleText}>Profile</Text>
         </View>
         <TouchableOpacity>
-          <View style={Styles.iconContainer}>
-            <Icon name="settings" size={23} color="black" />
+          <View style={styles.profileImage}>
+            <Text>Image</Text>
           </View>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+      <View style={styles.header}>
+        <TouchableOpacity>
+          <View style={styles.iconContainer}>
+            <Icon name="settings" size={23} color="black" />
+            <Text style={styles.text}>Settings</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.header}>
+        <TouchableOpacity>
+          <View style={styles.iconContainer}>
+            <Icon name="settings" size={23} color="black" />
+            <Text style={styles.text}>Languages</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.header}>
+        <TouchableOpacity>
+          <View style={styles.iconContainer}>
+            <Icon name="settings" size={23} color="black" />
+            <Text style={styles.text}>Something</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 };
 
