@@ -23,6 +23,9 @@ export interface IRef {
   district?: string;
   images?: string[];
   date?: Date;
+  reklam?: boolean;
+  url?: string;
+  urlText?: string;
   status?: TRefStatus;
   premium?: boolean;
 }
@@ -37,5 +40,5 @@ export interface ICategory {
   /** kategori öğesinin yazı rengi */
   textColor?: string;
   /** kategori resimi */
-  image?:string;
+  image?: string;
 }

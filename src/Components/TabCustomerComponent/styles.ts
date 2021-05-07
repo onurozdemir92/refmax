@@ -9,6 +9,7 @@ const Styles = StyleSheet.create({
   tabBarButton: {
     flex: 1,
     alignItems: 'center',
+    justifyContent: 'space-between',
   },
 });
 

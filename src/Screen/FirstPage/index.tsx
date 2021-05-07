@@ -6,10 +6,12 @@ import {
   View,
   Text,
   ScrollView,
+  Linking,
 } from 'react-native';
 import CategoryItem from '../../Components/CategoryItem';
 import Header from '../../Components/Header';
 import RefmaxItem from '../../Components/RefmaxItem/intex';
+import ReklamComponent from '../../Components/ReklamComponent';
 import SearchHeader from '../../Components/SearchHeader';
 import {ICategory, IRef} from '../../Helpers/Interfaces';
 import {categorys, refData} from '../../Helpers/TestData';
@@ -37,12 +39,21 @@ const FirstPage = ({navigation}) => {
         data={refData}
         numColumns={2}
         renderItem={({item, index}) => {
-          return (
-            <RefmaxItem
-              onRefPress={(e: IRef) => navigation.push('RefPage', {Ref: e})}
-              refmax={item}
-            />
-          );
+          if (item.reklam === true) {
+            return (
+              <ReklamComponent
+                onRefPress={(e: IRef) => Linking.openURL(e.url)}
+                refmax={item}
+              />
+            );
+          } else {
+            return (
+              <RefmaxItem
+                onRefPress={(e: IRef) => navigation.push('RefPage', {Ref: e})}
+                refmax={item}
+              />
+            );
+          }
         }}
       />
     </SafeAreaView>

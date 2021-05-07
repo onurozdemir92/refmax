@@ -62,6 +62,9 @@ export const refData: IRef[] = [
     price: '10000',
     userId: '1',
     state: 'Sinop',
+    reklam: true,
+    urlText: 'google.com',
+    url: 'https://www.google.com',
   },
   {
     id: '2',
