@@ -5,6 +5,10 @@ const Styles = StyleSheet.create({
     width: '100%',
     height: 50,
     flexDirection: 'row',
+    backgroundColor: 'white',
+    borderTopColor: '#DDDEDF',
+    borderTopWidth: 0.5,
+    paddingVertical: 3,
   },
   tabBarButton: {
     flex: 1,

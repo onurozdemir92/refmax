@@ -17,7 +17,13 @@ const TabCustomerComponent = props => {
           color={props.state.index === 0 ? Colors.ChatColor : '#C0BEBE'}
           size={25}
         />
-        <Text>Anasayfa</Text>
+        <Text
+          style={{
+            color: props.state.index === 0 ? Colors.ChatColor : '#626262',
+            fontSize: 10,
+          }}>
+          Anasayfa
+        </Text>
       </TouchableOpacity>
       <TouchableOpacity
         activeOpacity={0.6}
@@ -28,14 +34,26 @@ const TabCustomerComponent = props => {
           color={props.state.index === 1 ? Colors.ChatColor : '#C0BEBE'}
           size={25}
         />
-        <Text>begenilenler</Text>
+        <Text
+          style={{
+            color: props.state.index === 1 ? Colors.ChatColor : '#626262',
+            fontSize: 10,
+          }}>
+          begenilenler
+        </Text>
       </TouchableOpacity>
       <TouchableOpacity
         activeOpacity={0.6}
         style={Styles.tabBarButton}
         onPress={() => props.navigation.navigate('Share')}>
-        <Icon name={'ios-add-circle'} color="#1278FA" size={25} />
-        <Text>paylas</Text>
+        <Icon name={'ios-add-circle'} color="#626262" size={30} />
+        <Text
+          style={{
+            color: '#626262',
+            fontSize: 10,
+          }}>
+          paylas
+        </Text>
       </TouchableOpacity>
       <TouchableOpacity
         activeOpacity={0.6}
@@ -46,7 +64,13 @@ const TabCustomerComponent = props => {
           color={props.state.index === 2 ? Colors.ChatColor : '#C0BEBE'}
           size={25}
         />
-        <Text>konuşma</Text>
+        <Text
+          style={{
+            color: props.state.index === 2 ? Colors.ChatColor : '#626262',
+            fontSize: 10,
+          }}>
+          konuşma
+        </Text>
       </TouchableOpacity>
       <TouchableOpacity
         activeOpacity={0.6}
@@ -57,7 +81,13 @@ const TabCustomerComponent = props => {
           color={props.state.index === 3 ? Colors.ChatColor : '#C0BEBE'}
           size={25}
         />
-        <Text>sayfam</Text>
+        <Text
+          style={{
+            color: props.state.index === 3 ? Colors.ChatColor : '#626262',
+            fontSize: 10,
+          }}>
+          sayfam
+        </Text>
       </TouchableOpacity>
     </View>
   );
