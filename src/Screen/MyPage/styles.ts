@@ -6,21 +6,27 @@ const Styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  header1: {
+  headerContainer: {
     height: height * 0.08,
     flexDirection: 'row',
     paddingHorizontal: 10,
     justifyContent: 'space-between',
     backgroundColor: 'white',
   },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   profileImage: {
     width: 50,
     height: 50,
+    borderRadius: 25,
     backgroundColor: 'red',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  header: {
+  header2: {
     height: height * 0.08,
     flexDirection: 'column',
     paddingHorizontal: 10,
@@ -31,18 +37,18 @@ const Styles = StyleSheet.create({
     height: '100%',
     justifyContent: 'center',
   },
-  headerTitleText: {
-    fontSize: 19,
-    fontWeight: 'bold',
-  },
-  iconContainer: {
-    height: '100%',
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  text: {
-    marginLeft: 10,
-  },
+  // headerTitleText: {
+  //   fontSize: 19,
+  //   fontWeight: 'bold',
+  // },
+  // iconContainer: {
+  //   height: '100%',
+  //   flexDirection: 'row',
+  //   alignItems: 'center',
+  // },
+  // text: {
+  //   marginLeft: 10,
+  // },
 });
 
 export default Styles;
