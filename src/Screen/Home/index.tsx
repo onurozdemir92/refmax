@@ -5,14 +5,15 @@ import IconMI from 'react-native-vector-icons/MaterialIcons';
 
 import FirstPage from '../FirstPage';
 import FavoritePage from '../FavoritePage';
-import SharePage from '../SharePage';
 import ChatPage from '../ChatPage';
 import MyPage from '../MyPage';
+import {View} from 'react-native';
+import TabCustomerComponent from '../../Components/TabCustomerComponent';
 
 const Tab = createBottomTabNavigator();
 const Home = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator tabBar={props => <TabCustomerComponent {...props} />}>
       <Tab.Screen
         options={{
           title: 'AnaSayfa',
@@ -28,16 +29,6 @@ const Home = () => {
         }}
         name="FavoritePage"
         component={FavoritePage}
-      />
-      <Tab.Screen
-        options={{
-          title: 'Paylaş',
-          tabBarIcon: e => (
-            <Icon name={'ios-add-circle'} color={e.color} size={25} />
-          ),
-        }}
-        name="SharePage"
-        component={SharePage}
       />
       <Tab.Screen
         options={{
