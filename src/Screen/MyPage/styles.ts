@@ -7,48 +7,47 @@ const Styles = StyleSheet.create({
     flex: 1,
   },
   headerContainer: {
-    height: height * 0.08,
+    height: height / 12,
     flexDirection: 'row',
-    paddingHorizontal: 10,
+    paddingHorizontal: 4,
     justifyContent: 'space-between',
     backgroundColor: 'white',
   },
   header: {
+    flex: 4,
+  },
+  leftIcon: {
+    flex: 4,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     alignItems: 'center',
+  },
+  name: {
+    fontSize: 18,
+    paddingHorizontal: 8,
   },
   profileImage: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    backgroundColor: 'red',
+    width: height / 14,
+    height: height / 14,
+    borderRadius: (height / 14) * 2,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'red',
   },
-  header2: {
-    height: height * 0.08,
-    flexDirection: 'column',
-    paddingHorizontal: 10,
-    justifyContent: 'flex-start',
-    backgroundColor: 'white',
+  empty: {
+    flex: 1,
   },
-  headerTitleContainer: {
-    height: '100%',
+  ringIcon: {
+    flex: 1,
+    alignItems: 'center',
     justifyContent: 'center',
   },
-  // headerTitleText: {
-  //   fontSize: 19,
-  //   fontWeight: 'bold',
-  // },
-  // iconContainer: {
-  //   height: '100%',
-  //   flexDirection: 'row',
-  //   alignItems: 'center',
-  // },
-  // text: {
-  //   marginLeft: 10,
-  // },
+  settingsIcon: {
+    flex: 1,
+    justifyContent: 'center',
+    height: '100%',
+    alignItems: 'center',
+  },
 });
 
 export default Styles;

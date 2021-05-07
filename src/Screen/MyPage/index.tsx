@@ -5,40 +5,34 @@ import PlatformSpecificStatusBar from '../../Components/StatusBar';
 import styles from './styles';
 import MCIIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const MyPage = () => {
+const MyPage = ({navigation}) => {
   return (
     <View style={styles.container}>
       <PlatformSpecificStatusBar />
       <View style={styles.headerContainer}>
-        <TouchableOpacity>
-          <View style={styles.header}>
-            <View style={styles.profileImage}>
-              <Text>Image</Text>
-            </View>
-            <View>
-              <Text>Umur Samaz</Text>
-            </View>
-            <View>
-              <MCIIcon name="arrow-right" size={23} color="black" />
-            </View>
+        <TouchableOpacity
+          style={styles.leftIcon}
+          onPress={() => {
+            navigation.navigate('ProfileSettings');
+          }}>
+          <View style={styles.profileImage}>
+            <Text>Image</Text>
+          </View>
+          <View>
+            <Text style={styles.name}>Umur Samaz</Text>
+          </View>
+          <View>
+            <MCIIcon name="arrow-right" size={23} color="black" />
           </View>
         </TouchableOpacity>
-        <View style={styles.headerTitleContainer}>
-          <TouchableOpacity>
-            <View>
-              <Icon name="settings" size={23} color="black" />
-            </View>
-          </TouchableOpacity>
-        </View>
+        <View style={styles.empty} />
+        <TouchableOpacity style={styles.ringIcon}>
+          <MCIIcon name="bell-ring" size={23} color="black" />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.settingsIcon}>
+          <Icon name="settings" size={28} color="black" />
+        </TouchableOpacity>
       </View>
-      {/* <View style={styles.header}>
-        <TouchableOpacity>
-          <View style={styles.iconContainer}>
-            <Icon name="settings" size={23} color="black" />
-            <Text style={styles.text}>Settings</Text>
-          </View>
-        </TouchableOpacity>
-      </View> */}
     </View>
   );
 };
