@@ -6,42 +6,47 @@ const Styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  header1: {
-    height: height * 0.08,
+  headerContainer: {
+    height: height / 12,
     flexDirection: 'row',
-    paddingHorizontal: 10,
+    paddingHorizontal: 4,
     justifyContent: 'space-between',
     backgroundColor: 'white',
   },
-  profileImage: {
-    width: 50,
-    height: 50,
-    backgroundColor: 'red',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   header: {
-    height: height * 0.08,
-    flexDirection: 'column',
-    paddingHorizontal: 10,
-    justifyContent: 'flex-start',
-    backgroundColor: 'white',
+    flex: 4,
   },
-  headerTitleContainer: {
-    height: '100%',
-    justifyContent: 'center',
-  },
-  headerTitleText: {
-    fontSize: 19,
-    fontWeight: 'bold',
-  },
-  iconContainer: {
-    height: '100%',
+  leftIcon: {
+    flex: 4,
     flexDirection: 'row',
+    justifyContent: 'flex-start',
     alignItems: 'center',
   },
-  text: {
-    marginLeft: 10,
+  name: {
+    fontSize: 18,
+    paddingHorizontal: 8,
+  },
+  profileImage: {
+    width: height / 14,
+    height: height / 14,
+    borderRadius: (height / 14) * 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'red',
+  },
+  empty: {
+    flex: 1,
+  },
+  ringIcon: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  settingsIcon: {
+    flex: 1,
+    justifyContent: 'center',
+    height: '100%',
+    alignItems: 'center',
   },
 });
 

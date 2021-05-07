@@ -3,43 +3,34 @@ import {Text, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import PlatformSpecificStatusBar from '../../Components/StatusBar';
 import styles from './styles';
+import MCIIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const MyPage = () => {
+const MyPage = ({navigation}) => {
   return (
     <View style={styles.container}>
       <PlatformSpecificStatusBar />
-      <View style={styles.header1}>
-        <View style={styles.headerTitleContainer}>
-          <Text style={styles.headerTitleText}>Profile</Text>
-        </View>
-        <TouchableOpacity>
+      <View style={styles.headerContainer}>
+        <TouchableOpacity
+          style={styles.leftIcon}
+          onPress={() => {
+            navigation.navigate('ProfileSettings');
+          }}>
           <View style={styles.profileImage}>
             <Text>Image</Text>
           </View>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.header}>
-        <TouchableOpacity>
-          <View style={styles.iconContainer}>
-            <Icon name="settings" size={23} color="black" />
-            <Text style={styles.text}>Settings</Text>
+          <View>
+            <Text style={styles.name}>Umur Samaz</Text>
+          </View>
+          <View>
+            <MCIIcon name="arrow-right" size={23} color="black" />
           </View>
         </TouchableOpacity>
-      </View>
-      <View style={styles.header}>
-        <TouchableOpacity>
-          <View style={styles.iconContainer}>
-            <Icon name="settings" size={23} color="black" />
-            <Text style={styles.text}>Languages</Text>
-          </View>
+        <View style={styles.empty} />
+        <TouchableOpacity style={styles.ringIcon}>
+          <MCIIcon name="bell-ring" size={23} color="black" />
         </TouchableOpacity>
-      </View>
-      <View style={styles.header}>
-        <TouchableOpacity>
-          <View style={styles.iconContainer}>
-            <Icon name="settings" size={23} color="black" />
-            <Text style={styles.text}>Something</Text>
-          </View>
+        <TouchableOpacity style={styles.settingsIcon}>
+          <Icon name="settings" size={28} color="black" />
         </TouchableOpacity>
       </View>
     </View>
