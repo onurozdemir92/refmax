@@ -29,7 +29,11 @@ const MyPage = ({navigation}) => {
         <TouchableOpacity style={styles.ringIcon}>
           <MCIIcon name="bell-ring" size={23} color="black" />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.settingsIcon}>
+        <TouchableOpacity
+          style={styles.settingsIcon}
+          onPress={() => {
+            navigation.navigate('AppSettings');
+          }}>
           <Icon name="settings" size={28} color="black" />
         </TouchableOpacity>
       </View>

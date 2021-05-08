@@ -19,6 +19,7 @@ import ImagePageScreen from './src/Screen/ImagePage';
 import RefPageScreen from './src/Screen/RefPage';
 import Home from './src/Screen/Home';
 import ProfileSettings from './src/Screen/ProfileSettings';
+import AppSettings from './src/Screen/AppSettings';
 
 const Stack = createStackNavigator();
 const App: () => Node = () => {
@@ -31,6 +32,7 @@ const App: () => Node = () => {
         <Stack.Screen name="Share" component={ShareScreen} />
         <Stack.Screen name="ProfileSettings" component={ProfileSettings} />
         <Stack.Screen name="ImagePage" component={ImagePageScreen} />
+        <Stack.Screen name="AppSettings" component={AppSettings} />
       </Stack.Navigator>
     </NavigationContainer>
   );

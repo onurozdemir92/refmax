@@ -10,7 +10,7 @@ const MyPage = () => {
   return (
     <View style={styles.container}>
       <PlatformSpecificStatusBar />
-      <Header />
+      <Header title="Profile" />
       <View style={styles.personalInfo}>
         <View style={styles.left}>
           <Text>Name</Text>
