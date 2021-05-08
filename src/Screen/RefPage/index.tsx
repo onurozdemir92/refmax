@@ -16,6 +16,7 @@ import IconMI from 'react-native-vector-icons/MaterialIcons';
 import moment from 'moment';
 import Styles from './styles';
 import RefmaxHorizontalItem from '../../Components/RefmaxHorizontalItem';
+import {ScreenNames} from '../../Helpers/ScreenNames';
 
 const RefPage = ({route, navigation}) => {
   const [imageIndex, setImageIndex] = useState<number>(1);
@@ -167,13 +168,17 @@ const RefPage = ({route, navigation}) => {
             pagingEnabled={true}
             horizontal={true}>
             {refmax.images.map((image: string, index) => (
-              <View key={index} style={Styles.imagesContainer}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate(ScreenNames.ImagePage)}
+                activeOpacity={1}
+                key={index}
+                style={Styles.imagesContainer}>
                 <Image
                   resizeMode="contain"
                   style={Styles.image}
                   source={{uri: image}}
                 />
-              </View>
+              </TouchableOpacity>
             ))}
           </ScrollView>
           <View style={Styles.imageIndexContainer}>
