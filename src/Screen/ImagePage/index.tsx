@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   View,
@@ -11,19 +11,23 @@ import {
 import IconI from 'react-native-vector-icons/Ionicons';
 import IconMI from 'react-native-vector-icons/MaterialIcons';
 import Styles from './styles';
-const index = () => {
+const ImagePage = ({navigation}) => {
+  const [state, setState] = useState<boolean>(true);
+
   return (
     <SafeAreaView style={Styles.container}>
       <View style={Styles.imageContainer}>
         <ScrollView pagingEnabled style={Styles.flex} horizontal>
-          <Image
-            resizeMode="contain"
-            style={Styles.image}
-            source={{
-              uri:
-                'https://images.unsplash.com/photo-1516767784670-cfc730ed0f87?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-            }}
-          />
+          <TouchableOpacity onPress={() => setState(!state)} activeOpacity={1}>
+            <Image
+              resizeMode="contain"
+              style={Styles.image}
+              source={{
+                uri:
+                  'https://images.unsplash.com/photo-1516767784670-cfc730ed0f87?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+              }}
+            />
+          </TouchableOpacity>
           <Image
             resizeMode="contain"
             style={Styles.image}
@@ -34,31 +38,35 @@ const index = () => {
           />
         </ScrollView>
       </View>
-      <View style={Styles.closeContainer}>
-        <TouchableOpacity>
-          <View style={Styles.closeButton}>
-            <Text style={Styles.closeText}>X</Text>
+      {state ? (
+        <>
+          <View style={Styles.closeContainer}>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <View style={Styles.closeButton}>
+                <Text style={Styles.closeText}>X</Text>
+              </View>
+            </TouchableOpacity>
           </View>
-        </TouchableOpacity>
-      </View>
-      <View style={Styles.bottomContainer}>
-        <View style={Styles.contactContainer}>
-          <TouchableOpacity style={Styles.phoneButton}>
-            <IconMI name="phone" size={25} color="white" />
-          </TouchableOpacity>
-          <View style={Styles.space} />
-          <TouchableOpacity style={Styles.messageButton}>
-            <IconI name="paper-plane" size={25} color="white" />
-          </TouchableOpacity>
-        </View>
-        <View style={Styles.shareContainer}>
-          <TouchableOpacity style={Styles.shareButton}>
-            <IconI name="share-social" size={25} />
-          </TouchableOpacity>
-        </View>
-      </View>
+          <View style={Styles.bottomContainer}>
+            <View style={Styles.contactContainer}>
+              <TouchableOpacity style={Styles.phoneButton}>
+                <IconMI name="phone" size={25} color="white" />
+              </TouchableOpacity>
+              <View style={Styles.space} />
+              <TouchableOpacity style={Styles.messageButton}>
+                <IconI name="paper-plane" size={25} color="white" />
+              </TouchableOpacity>
+            </View>
+            <View style={Styles.shareContainer}>
+              <TouchableOpacity style={Styles.shareButton}>
+                <IconI name="share-social" size={25} />
+              </TouchableOpacity>
+            </View>
+          </View>
+        </>
+      ) : null}
     </SafeAreaView>
   );
 };
 
-export default index;
+export default ImagePage;
