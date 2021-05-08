@@ -14,6 +14,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import SplashScreen from './src/Screen/SplashScreen';
 import ShareScreen from './src/Screen/SharePage';
+import ImagePageScreen from './src/Screen/ImagePage';
 
 import RefPageScreen from './src/Screen/RefPage';
 import Home from './src/Screen/Home';
@@ -29,6 +30,7 @@ const App: () => Node = () => {
         <Stack.Screen name="RefPage" component={RefPageScreen} />
         <Stack.Screen name="Share" component={ShareScreen} />
         <Stack.Screen name="ProfileSettings" component={ProfileSettings} />
+        <Stack.Screen name="ImagePage" component={ImagePageScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
