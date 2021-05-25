@@ -46,14 +46,7 @@ const TabCustomerComponent = props => {
         activeOpacity={0.6}
         style={Styles.tabBarButton}
         onPress={() => props.navigation.navigate('Share')}>
-        <Icon name={'ios-add-circle'} color="#626262" size={30} />
-        <Text
-          style={{
-            color: '#626262',
-            fontSize: 10,
-          }}>
-          paylas
-        </Text>
+        <Icon name={'ios-add-circle'} color="#626262" size={40} />
       </TouchableOpacity>
       <TouchableOpacity
         activeOpacity={0.6}
