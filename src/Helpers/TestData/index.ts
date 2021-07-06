@@ -51,7 +51,7 @@ export const refData: IRef[] = [
   {
     id: '1',
     country: 'Türkiye',
-    description: 'dlaksdk kdlasdlşasklş lsldkalskd lksaldkla klaskdlaskd',
+    description: 'dlaksdk kdlk',
     district: 'gerze',
     favorite: true,
     title: 'Apple 6s Plus',
@@ -69,7 +69,7 @@ export const refData: IRef[] = [
   {
     id: '2',
     country: 'Türkiye',
-    description: 'dlaksdk kdlasdlşasklş lsldkalskd lksaldkla klaskdlaskd',
+    description: 'dlaksd',
     district: 'gerze',
     favorite: false,
     title: 'Apple 6s Plus',

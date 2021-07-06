@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, TouchableOpacity, Text} from 'react-native';
+import {View, TouchableOpacity, Text, ViewBase} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import IconMI from 'react-native-vector-icons/MaterialIcons';
 import Colors from '../../Screen/Theme/Colors';
@@ -13,74 +13,53 @@ const TabCustomerComponent = props => {
         style={Styles.tabBarButton}
         onPress={() => props.navigation.navigate('FirstPage')}>
         <Icon
-          name={'home'}
+          name={'md-grid-outline'}
           color={props.state.index === 0 ? Colors.ChatColor : '#C0BEBE'}
-          size={25}
+          size={35}
         />
-        <Text
-          style={{
-            color: props.state.index === 0 ? Colors.ChatColor : '#626262',
-            fontSize: 10,
-          }}>
-          Anasayfa
-        </Text>
       </TouchableOpacity>
       <TouchableOpacity
         activeOpacity={0.6}
         style={Styles.tabBarButton}
-        onPress={() => props.navigation.navigate('FavoritePage')}>
-        <IconMI
-          name="favorite"
+        onPress={() => props.navigation.navigate('Search')}>
+        <Icon
+          name="ios-search-outline"
           color={props.state.index === 1 ? Colors.ChatColor : '#C0BEBE'}
-          size={25}
+          size={35}
         />
-        <Text
-          style={{
-            color: props.state.index === 1 ? Colors.ChatColor : '#626262',
-            fontSize: 10,
-          }}>
-          begenilenler
-        </Text>
       </TouchableOpacity>
       <TouchableOpacity
         activeOpacity={0.6}
         style={Styles.tabBarButton}
         onPress={() => props.navigation.navigate('Share')}>
-        <Icon name={'ios-add-circle'} color="#626262" size={40} />
+        <View
+          style={{
+            width: 50,
+            height: 50,
+            borderRadius: 25,
+            backgroundColor: 'gray',
+          }}></View>
+        {/* <Icon name={'ios-add-circle'} color="#626262" size={40} /> */}
       </TouchableOpacity>
       <TouchableOpacity
         activeOpacity={0.6}
         style={Styles.tabBarButton}
         onPress={() => props.navigation.navigate('ChatPage')}>
         <Icon
-          name={'paper-plane'}
+          name={'ios-chatbubble-ellipses-outline'}
           color={props.state.index === 2 ? Colors.ChatColor : '#C0BEBE'}
-          size={25}
+          size={35}
         />
-        <Text
-          style={{
-            color: props.state.index === 2 ? Colors.ChatColor : '#626262',
-            fontSize: 10,
-          }}>
-          konuşma
-        </Text>
       </TouchableOpacity>
       <TouchableOpacity
         activeOpacity={0.6}
         style={Styles.tabBarButton}
-        onPress={() => props.navigation.navigate('MyPage')}>
-        <Icon
-          name={'person'}
+        onPress={() => props.navigation.navigate('FavoritePage')}>
+        <IconMI
+          name={'favorite-border'}
           color={props.state.index === 3 ? Colors.ChatColor : '#C0BEBE'}
-          size={25}
+          size={35}
         />
-        <Text
-          style={{
-            color: props.state.index === 3 ? Colors.ChatColor : '#626262',
-            fontSize: 10,
-          }}>
-          sayfam
-        </Text>
       </TouchableOpacity>
     </View>
   );

@@ -6,7 +6,8 @@ import IconMI from 'react-native-vector-icons/MaterialIcons';
 import FirstPage from '../FirstPage';
 import FavoritePage from '../FavoritePage';
 import ChatPage from '../ChatPage';
-import MyPage from '../MyPage';
+import Search from '../Search';
+
 import {View} from 'react-native';
 import TabCustomerComponent from '../../Components/TabCustomerComponent';
 
@@ -27,8 +28,8 @@ const Home = () => {
           title: 'Beğenilenler',
           tabBarIcon: e => <IconMI name="favorite" size={25} color={e.color} />,
         }}
-        name="FavoritePage"
-        component={FavoritePage}
+        name="Search"
+        component={Search}
       />
       <Tab.Screen
         options={{
@@ -45,8 +46,8 @@ const Home = () => {
           title: 'Sayfam',
           tabBarIcon: e => <Icon name={'person'} color={e.color} size={25} />,
         }}
-        name="MyPage"
-        component={MyPage}
+        name="FavoritePage"
+        component={FavoritePage}
       />
     </Tab.Navigator>
   );
