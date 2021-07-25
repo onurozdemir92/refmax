@@ -5,11 +5,10 @@ const Styles = StyleSheet.create({
   container: {
     width: '100%',
     flexDirection: 'row',
-    alignItems: 'center',
     paddingVertical: 10,
   },
   leftContainer: {
-    flex: 4,
+    flex: 6,
   },
   rightContainer: {
     flex: 1,
@@ -32,7 +31,6 @@ const Styles = StyleSheet.create({
   leftSubContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    flex: 1,
   },
   locationContainer: {
     width: '70%',

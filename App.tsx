@@ -20,6 +20,7 @@ import RefPageScreen from './src/Screen/RefPage';
 import Home from './src/Screen/Home';
 import ProfileSettings from './src/Screen/ProfileSettings';
 import AppSettings from './src/Screen/AppSettings';
+import MyPage from './src/Screen/MyPage';
 
 const Stack = createStackNavigator();
 const App: () => Node = () => {
@@ -33,6 +34,7 @@ const App: () => Node = () => {
         <Stack.Screen name="ProfileSettings" component={ProfileSettings} />
         <Stack.Screen name="ImagePage" component={ImagePageScreen} />
         <Stack.Screen name="AppSettings" component={AppSettings} />
+        <Stack.Screen name="MyPage" component={MyPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );

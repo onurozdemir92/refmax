@@ -25,7 +25,7 @@ const FirstPage = ({navigation}) => {
       <StatusBar barStyle="dark-content" backgroundColor="white" />
       {/* <Header /> */}
       {/* <SearchHeader /> */}
-      <FirstPageHeader />
+      <FirstPageHeader navigation={navigation} />
       <FlatList
         ListHeaderComponent={
           <View style={Styles.CategoryContainer}>

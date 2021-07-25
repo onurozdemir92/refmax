@@ -19,6 +19,7 @@ const Colors = {
   dotsButtons: '#C8D2F5',
   priceText: '#1A1925',
   infoText: '#C4C4C4',
+  titleText: '#535461',
 };
 
 export default Colors;
