@@ -1,85 +1,53 @@
 import {Dimensions, StyleSheet} from 'react-native';
+import Colors from '../../Screen/Theme/Colors';
+
 const {height, width} = Dimensions.get('window');
 const Styles = StyleSheet.create({
   container: {
     width: width / 2,
-    height: height * 0.4,
-    paddingVertical: 5,
-    paddingHorizontal: 10,
-    marginTop:10
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+    padding: 5,
   },
-  refContainer: {
-    flex: 1,
+  subContainer: {
+    width: '100%',
+    backgroundColor: 'white',
     borderRadius: 5,
-    // shadowColor: '#000',
-    // shadowOffset: {
-    //   width: 0,
-    //   height: 1,
-    // },
-    // shadowOpacity: 0.22,
-    // shadowRadius: 2.22,
-
-    // elevation: 3,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 5,
   },
   imageContainer: {
     width: '100%',
-    height: '50%',
+    height: 150,
   },
   image: {
     width: '100%',
     height: '100%',
-    // borderTopRightRadius: 5,
-    // borderTopLeftRadius: 5,
+    borderRadius: 5,
   },
-  favoriteButton: {
-    position: 'absolute',
-    width: 30,
-    height: 30,
-    borderRadius: 15,
-    backgroundColor: 'rgba(0,0,0,.2)',
-    right: 5,
-    top: 5,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  titleContainer: {
-    width: '100%',
+  infoContainer: {
+    width: '90%',
     flexDirection: 'row',
+    marginTop: 5,
+    justifyContent: 'space-between',
   },
-  titleSubContainer: {
-    flex: 1,
-  },
+  infoTextContainer: {},
+  infoButtonContainer: {},
   titleText: {
-    fontSize: 16,
-
-    marginTop: 5,
-  },
-  buttonsContainer: {},
-  favoriteButtom: {
-    marginTop: 5,
-  },
-  priceContainer: {
-    width: '100%',
-    marginTop:5
+    color: Colors.locationColors,
   },
   priceText: {
-    fontWeight: 'bold',
-    fontSize: 18,
+    color: Colors.priceText,
+    fontSize: 16,
+    fontWeight: '700',
+    marginBottom: 20,
   },
-  dateContainer:{
-    width:'100%',
+  locationText: {
+    color: Colors.infoText,
+    fontSize: 12,
   },
-  dateText:{
-    color:'gray'
-  },
-  stateContainer:{
-    width:'100%',
-    marginTop:5
-
-  },
-  stateText:{
-    color:'gray'
-  }
 });
 
 export default Styles;

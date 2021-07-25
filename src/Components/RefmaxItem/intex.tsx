@@ -1,8 +1,11 @@
 import React from 'react';
 import {View, Image, TouchableOpacity, Text} from 'react-native';
 import {IRef} from '../../Helpers/Interfaces';
-import IconMI from 'react-native-vector-icons/MaterialIcons';
+import IconI from 'react-native-vector-icons/Ionicons';
+import IconMCI from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import Styles from './styles';
+import Colors from '../../Screen/Theme/Colors';
 
 interface IRefmaxItem {
   refmax: IRef;
@@ -11,53 +14,41 @@ interface IRefmaxItem {
 
 const RefmaxItem = ({refmax, onRefPress}: IRefmaxItem) => {
   return (
-    <View
-      style={[
-        Styles.container,
-        refmax.premium ? {backgroundColor: '#FCFAB0'} : null,
-      ]}>
-      <TouchableOpacity
-        activeOpacity={0.95}
-        onPress={() => onRefPress(refmax)}
-        style={Styles.refContainer}>
+    <TouchableOpacity style={Styles.container}>
+      <View style={Styles.subContainer}>
         <View style={Styles.imageContainer}>
           <Image
             resizeMode="cover"
-            source={{uri: refmax.images[0]}}
             style={Styles.image}
+            source={{uri: refmax.images[0]}}
           />
         </View>
-        <View style={Styles.titleContainer}>
-          <View style={Styles.titleSubContainer}>
-            <Text style={Styles.titleText}>
-              Kiralık Ev balkonlu ii katlı ne arasan o da buda şuda
-            </Text>
+        <View style={Styles.infoContainer}>
+          <View style={Styles.infoTextContainer}>
+            <Text style={Styles.titleText}>Akıllı Saat</Text>
+            <Text style={Styles.priceText}>3500 ₺</Text>
+            <Text style={Styles.locationText}>Ankara, Kızılay</Text>
+            <Text style={Styles.locationText}>Bugün, 00:20</Text>
           </View>
-          <View style={Styles.buttonsContainer}>
+          <View style={Styles.infoButtonContainer}>
             <TouchableOpacity>
-              <IconMI
-                name="favorite"
-                size={23}
-                color={'#3996E3'}
-                style={Styles.favoriteButtom}
+              <IconI
+                name="heart-outline"
+                size={25}
+                color={Colors.locationColors}
               />
             </TouchableOpacity>
             <TouchableOpacity>
-              <IconMI name="more-horiz" size={23} color={'black'} />
+              <IconMCI
+                name="dots-horizontal"
+                size={25}
+                color={Colors.dotsButtons}
+              />
             </TouchableOpacity>
           </View>
         </View>
-        <View style={Styles.priceContainer}>
-          <Text style={Styles.priceText}>1300 ₺</Text>
-        </View>
-        <View style={Styles.stateContainer}>
-          <Text style={Styles.stateText}>Ankara/Etimesgut</Text>
-        </View>
-        <View style={Styles.dateContainer}>
-          <Text style={Styles.dateText}>8 Kasım, 20:15</Text>
-        </View>
-      </TouchableOpacity>
-    </View>
+      </View>
+    </TouchableOpacity>
   );
 };
 

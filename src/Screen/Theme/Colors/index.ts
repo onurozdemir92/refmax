@@ -15,6 +15,10 @@ const Colors = {
   Gray: '#CCC',
   locationColors: '#00B0FF',
   sliderBackground: '#FAF5C2',
+  backgroundColor: '#F0FAFF',
+  dotsButtons: '#C8D2F5',
+  priceText: '#1A1925',
+  infoText: '#C4C4C4',
 };
 
 export default Colors;

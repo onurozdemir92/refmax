@@ -21,7 +21,7 @@ import Styles from './styles';
 
 const FirstPage = ({navigation}) => {
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
+    <SafeAreaView style={Styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="white" />
       {/* <Header /> */}
       {/* <SearchHeader /> */}
@@ -31,8 +31,7 @@ const FirstPage = ({navigation}) => {
           <View style={Styles.CategoryContainer}>
             <ScrollView
               showsHorizontalScrollIndicator={false}
-              
-              style={{paddingVertical: 5}}
+              style={Styles.sliderScroll}
               horizontal={true}>
               {categorys.map((item: ICategory, index: number) => (
                 // <CategoryItem key={index} data={item} />
@@ -42,23 +41,15 @@ const FirstPage = ({navigation}) => {
           </View>
         }
         data={refData}
+        style={Styles.flatlist}
         numColumns={2}
         renderItem={({item, index}) => {
-          if (item.reklam === true) {
-            return (
-              <ReklamComponent
-                onRefPress={(e: IRef) => Linking.openURL(e.url)}
-                refmax={item}
-              />
-            );
-          } else {
-            return (
-              <RefmaxItem
-                onRefPress={(e: IRef) => navigation.push('RefPage', {Ref: e})}
-                refmax={item}
-              />
-            );
-          }
+          return (
+            <RefmaxItem
+              onRefPress={(e: IRef) => navigation.push('RefPage', {Ref: e})}
+              refmax={item}
+            />
+          );
         }}
       />
     </SafeAreaView>
