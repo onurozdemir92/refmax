@@ -13,6 +13,8 @@ const Colors = {
   DeepBlue: '#0D47A1',
   Red: '#E53935',
   Gray: '#CCC',
+  locationColors: '#00B0FF',
+  sliderBackground: '#FAF5C2',
 };
 
 export default Colors;
