@@ -15,7 +15,7 @@ const TabCustomerComponent = props => {
         <Icon
           name={'md-grid-outline'}
           color={props.state.index === 0 ? Colors.ChatColor : '#C0BEBE'}
-          size={35}
+          size={25}
         />
       </TouchableOpacity>
       <TouchableOpacity
@@ -25,7 +25,7 @@ const TabCustomerComponent = props => {
         <Icon
           name="ios-search-outline"
           color={props.state.index === 1 ? Colors.ChatColor : '#C0BEBE'}
-          size={35}
+          size={25}
         />
       </TouchableOpacity>
       <TouchableOpacity
@@ -34,9 +34,9 @@ const TabCustomerComponent = props => {
         onPress={() => props.navigation.navigate('Share')}>
         <View
           style={{
-            width: 50,
-            height: 50,
-            borderRadius: 25,
+            width: 45,
+            height: 45,
+            borderRadius: 222,
             backgroundColor: 'gray',
           }}></View>
         {/* <Icon name={'ios-add-circle'} color="#626262" size={40} /> */}
@@ -48,7 +48,7 @@ const TabCustomerComponent = props => {
         <Icon
           name={'ios-chatbubble-ellipses-outline'}
           color={props.state.index === 2 ? Colors.ChatColor : '#C0BEBE'}
-          size={35}
+          size={25}
         />
       </TouchableOpacity>
       <TouchableOpacity
@@ -58,7 +58,7 @@ const TabCustomerComponent = props => {
         <IconMI
           name={'favorite-border'}
           color={props.state.index === 3 ? Colors.ChatColor : '#C0BEBE'}
-          size={35}
+          size={25}
         />
       </TouchableOpacity>
     </View>

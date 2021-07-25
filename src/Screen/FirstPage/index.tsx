@@ -9,6 +9,8 @@ import {
   Linking,
 } from 'react-native';
 import CategoryItem from '../../Components/CategoryItem';
+import FirstPageHeader from '../../Components/FirstPageHeader';
+import FirstSliderContainer from '../../Components/FirstSliderContainer';
 import Header from '../../Components/Header';
 import RefmaxItem from '../../Components/RefmaxItem/intex';
 import ReklamComponent from '../../Components/ReklamComponent';
@@ -22,16 +24,19 @@ const FirstPage = ({navigation}) => {
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <StatusBar barStyle="dark-content" backgroundColor="white" />
       {/* <Header /> */}
-      <SearchHeader />
+      {/* <SearchHeader /> */}
+      <FirstPageHeader />
       <FlatList
         ListHeaderComponent={
           <View style={Styles.CategoryContainer}>
             <ScrollView
               showsHorizontalScrollIndicator={false}
+              
               style={{paddingVertical: 5}}
               horizontal={true}>
               {categorys.map((item: ICategory, index: number) => (
-                <CategoryItem key={index} data={item} />
+                // <CategoryItem key={index} data={item} />
+                <FirstSliderContainer key={index} />
               ))}
             </ScrollView>
           </View>
