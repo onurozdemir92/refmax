@@ -25,10 +25,12 @@ const RefmaxItem = ({refmax, onRefPress}: IRefmaxItem) => {
         </View>
         <View style={Styles.infoContainer}>
           <View style={Styles.infoTextContainer}>
-            <Text style={Styles.titleText}>Akıllı Saat</Text>
-            <Text style={Styles.priceText}>3500 ₺</Text>
-            <Text style={Styles.locationText}>Ankara, Kızılay</Text>
-            <Text style={Styles.locationText}>Bugün, 00:20</Text>
+            <Text style={Styles.titleText}>{refmax.title}</Text>
+            <Text style={Styles.priceText}>{refmax.price} ₺</Text>
+            <Text style={Styles.locationText}>
+              {refmax.state + ', ' + refmax.district}
+            </Text>
+            <Text style={Styles.locationText}>{'Bugün, 20:01'}</Text>
           </View>
           <View style={Styles.infoButtonContainer}>
             <TouchableOpacity>

@@ -80,6 +80,7 @@ export const refData: IRef[] = [
     price: '10000',
     userId: '1',
     state: 'Sinop',
+    date: new Date(),
   },
   {
     id: '3',
