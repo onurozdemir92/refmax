@@ -18,7 +18,7 @@ const FirstPageHeader = ({avatar, navigation}: IFirstPageHeader) => {
     <View style={Styles.container}>
       <View style={Styles.leftContainer}>
         <View style={Styles.leftSubContainer}>
-          <View style={Styles.logo}>
+          <View>
             <Text>JetMio</Text>
           </View>
           <TouchableOpacity style={Styles.locationContainer}>
