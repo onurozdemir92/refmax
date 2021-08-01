@@ -1,7 +1,7 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, ImageBackground} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 import {ICategory} from '../../Helpers/Interfaces';
-import Styles from './Styles';
+import styles from './Styles';
 
 interface ICategoryItem {
   data: ICategory;
@@ -9,8 +9,8 @@ interface ICategoryItem {
 
 const CategoryItem = ({data}: ICategoryItem) => {
   return (
-    <TouchableOpacity activeOpacity={0.7} style={[Styles.container]}>
-      <Text style={Styles.categoryText}>{data.text}</Text>
+    <TouchableOpacity activeOpacity={0.7} style={styles.container}>
+      <Text style={styles.categoryText}>{data.text}</Text>
     </TouchableOpacity>
   );
 };
