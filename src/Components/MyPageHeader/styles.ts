@@ -1,11 +1,12 @@
 import {StyleSheet} from 'react-native';
 import Colors from '../../Screen/Theme/Colors';
+import Sizes from '../../Screen/Theme/Sizes';
 
 const Styles = StyleSheet.create({
   container: {
     width: '100%',
     flexDirection: 'row',
-    height: 60,
+    height: Sizes.MainHeader,
     borderBottomColor: '#C8D2F5',
     borderBottomWidth: 1,
   },

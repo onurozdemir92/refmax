@@ -8,6 +8,7 @@ const Styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginHorizontal: 10,
+    
   },
   subContainer: {
     width: width * 0.7,
@@ -16,6 +17,7 @@ const Styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     borderRadius: 10,
+    justifyContent: 'space-around',
   },
 });
 

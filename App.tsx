@@ -16,7 +16,7 @@ import SplashScreen from './src/Screen/SplashScreen';
 import ShareScreen from './src/Screen/SharePage';
 import ImagePageScreen from './src/Screen/ImagePage';
 
-import RefPageScreen from './src/Screen/RefPage';
+import ProductPageScreen from './src/Screen/ProductPage';
 import Home from './src/Screen/Home';
 import ProfileSettings from './src/Screen/ProfileSettings';
 import AppSettings from './src/Screen/AppSettings';
@@ -27,9 +27,13 @@ const App: () => Node = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none">
-        <Stack.Screen name="SplashScreen" component={SplashScreen} />
+        <Stack.Screen
+          name="SplashScreen"
+          options={{animationEnabled: true}}
+          component={SplashScreen}
+        />
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="RefPage" component={RefPageScreen} />
+        <Stack.Screen name="ProductPage" component={ProductPageScreen} />
         <Stack.Screen name="Share" component={ShareScreen} />
         <Stack.Screen name="ProfileSettings" component={ProfileSettings} />
         <Stack.Screen name="ImagePage" component={ImagePageScreen} />

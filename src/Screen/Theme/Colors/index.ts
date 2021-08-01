@@ -2,7 +2,8 @@ const Colors = {
   White: '#FFF',
   Black: '#000',
   Black04: 'rgba(0, 0, 0, 0.4)',
-  MainColor: '#5B8',
+  MainColor: '#00B0FF',
+  MainColor2: '#2BE431',
   StatusBar: '#0D47A1',
   Background: '#E9EAED',
   Orange: '#F9A825',
@@ -20,6 +21,12 @@ const Colors = {
   priceText: '#1A1925',
   infoText: '#C4C4C4',
   titleText: '#535461',
+  imageCountContainer: 'rgba(0,0,0,0.2)',
+  seenComponentIcon: '#2BE431',
+  seenTextColor: '#535461',
+  productTitleText: '#00B0FF',
+  productButton: '#00B0FF',
+  pointerColor: '#C8D2F5',
 };
 
 export default Colors;

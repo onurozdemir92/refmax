@@ -14,7 +14,10 @@ interface IRefmaxItem {
 
 const RefmaxItem = ({refmax, onRefPress}: IRefmaxItem) => {
   return (
-    <TouchableOpacity style={Styles.container}>
+    <TouchableOpacity
+      onPress={() => onRefPress()}
+      activeOpacity={0.7}
+      style={Styles.container}>
       <View style={Styles.subContainer}>
         <View style={Styles.imageContainer}>
           <Image

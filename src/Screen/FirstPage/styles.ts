@@ -8,10 +8,11 @@ const Styles = StyleSheet.create({
   },
   CategoryContainer: {
     width: '100%',
-    marginTop: 10,
+    marginTop: 15,
+    paddingBottom: 15,
   },
   flatlist: {
-    backgroundColor: Colors.backgroundColor,
+    backgroundColor: '#F4F4F4',
   },
   sliderScroll: {
     paddingVertical: 5,

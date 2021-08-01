@@ -7,16 +7,17 @@ const Styles = StyleSheet.create({
     width: width / 2,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 3,
     padding: 5,
   },
   subContainer: {
     width: '100%',
     backgroundColor: 'white',
-    borderRadius: 5,
+    borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 5,
+    
   },
   imageContainer: {
     width: '100%',

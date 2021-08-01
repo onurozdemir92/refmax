@@ -26,27 +26,25 @@ const FirstPage = ({navigation}) => {
       {/* <Header /> */}
       {/* <SearchHeader /> */}
       <FirstPageHeader navigation={navigation} />
+      <View style={Styles.CategoryContainer}>
+        <ScrollView
+          showsHorizontalScrollIndicator={false}
+          style={Styles.sliderScroll}
+          horizontal={true}>
+          {categorys.map((item: ICategory, index: number) => (
+            // <CategoryItem key={index} data={item} />
+            <FirstSliderContainer key={index} />
+          ))}
+        </ScrollView>
+      </View>
       <FlatList
-        ListHeaderComponent={
-          <View style={Styles.CategoryContainer}>
-            <ScrollView
-              showsHorizontalScrollIndicator={false}
-              style={Styles.sliderScroll}
-              horizontal={true}>
-              {categorys.map((item: ICategory, index: number) => (
-                // <CategoryItem key={index} data={item} />
-                <FirstSliderContainer key={index} />
-              ))}
-            </ScrollView>
-          </View>
-        }
         data={refData}
         style={Styles.flatlist}
         numColumns={2}
         renderItem={({item, index}) => {
           return (
             <RefmaxItem
-              onRefPress={(e: IRef) => navigation.push('RefPage', {Ref: e})}
+              onRefPress={(e: IRef) => navigation.push('ProductPage', {Ref: e})}
               refmax={item}
             />
           );
