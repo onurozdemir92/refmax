@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, TouchableOpacity, View, ScrollView, Image} from 'react-native';
 import IconI from 'react-native-vector-icons/Ionicons';
 import MyPageHeader from '../../Components/MyPageHeader';
-import Shoping from '../../../assets/images/shoping.png';
+import Shoping from '../../../assets/Images/Shoping.png';
 import Lira from '../../../assets/images/lira.png';
 import Help from '../../../assets/images/help.png';
 
