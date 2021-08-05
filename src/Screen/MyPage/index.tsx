@@ -2,9 +2,8 @@ import React from 'react';
 import {Text, TouchableOpacity, View, ScrollView, Image} from 'react-native';
 import IconI from 'react-native-vector-icons/Ionicons';
 import MyPageHeader from '../../Components/MyPageHeader';
-import Shoping from '../../../assets/Images/Shoping.png';
-import Lira from '../../../assets/images/lira.png';
-import Help from '../../../assets/images/help.png';
+
+import RefmaxImages from '../../Screen/Theme/Images/';
 
 import Styles from './styles';
 
@@ -41,7 +40,10 @@ const MyPage = ({navigation}) => {
           <View style={Styles.pointer}></View>
           <TouchableOpacity style={Styles.pagesButton}>
             <View style={Styles.pagesButtonIconContainer}>
-              <Image source={Shoping} style={Styles.shopingImage} />
+              <Image
+                source={RefmaxImages.Shoping}
+                style={Styles.shopingImage}
+              />
             </View>
             <View style={Styles.pagesButtonTextContainer}>
               <Text style={Styles.pagesButtonText}>Marketim</Text>
@@ -54,7 +56,7 @@ const MyPage = ({navigation}) => {
 
           <TouchableOpacity style={Styles.pagesButton}>
             <View style={Styles.pagesButtonIconContainer}>
-              <Image source={Lira} style={Styles.shopingImage} />
+              <Image source={RefmaxImages.Lira} style={Styles.shopingImage} />
             </View>
             <View style={Styles.pagesButtonTextContainer}>
               <Text style={Styles.pagesButtonText}>Ek hizmetler</Text>
@@ -67,7 +69,7 @@ const MyPage = ({navigation}) => {
 
           <TouchableOpacity style={Styles.pagesButton}>
             <View style={Styles.pagesButtonIconContainer}>
-              <Image source={Help} style={Styles.shopingImage} />
+              <Image source={RefmaxImages.Help} style={Styles.shopingImage} />
             </View>
             <View style={Styles.pagesButtonTextContainer}>
               <Text style={Styles.pagesButtonText}>Yardım</Text>

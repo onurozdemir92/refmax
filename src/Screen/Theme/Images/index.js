@@ -1,6 +1,6 @@
 import Shoping_ from '../../../Assets/Images/shoping.png';
 import Lira_ from '../../../Assets/Images/lira.png';
-import Help_ from '../../../Assets/Helpers/help.png';
+import Help_ from '../../../Assets/Images/help.png';
 
 export const RefmaxImages = {
   Shoping: Shoping_,
