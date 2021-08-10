@@ -8,6 +8,7 @@ import RefmaxImages from '../../Screen/Theme/Images/';
 import Styles from './styles';
 
 const MyPage = ({navigation}) => {
+  console.log('aaa');
   return (
     <View style={Styles.container}>
       <MyPageHeader navigation={navigation} title="Sayfam" />
