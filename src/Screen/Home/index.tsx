@@ -7,8 +7,6 @@ import FirstPage from '../FirstPage';
 import FavoritePage from '../FavoritePage';
 import ChatPage from '../ChatPage';
 import Search from '../Search';
-
-import {View} from 'react-native';
 import TabCustomerComponent from '../../Components/TabCustomerComponent';
 
 const Tab = createBottomTabNavigator();

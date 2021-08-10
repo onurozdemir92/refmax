@@ -1,14 +1,12 @@
 import React from 'react';
 import {Text, TouchableOpacity, View, ScrollView, Image} from 'react-native';
 import IconI from 'react-native-vector-icons/Ionicons';
+
 import MyPageHeader from '../../Components/MyPageHeader';
-
 import RefmaxImages from '../../Screen/Theme/Images/';
-
 import Styles from './styles';
 
 const MyPage = ({navigation}) => {
-  console.log('aaa');
   return (
     <View style={Styles.container}>
       <MyPageHeader navigation={navigation} title="Sayfam" />
@@ -38,7 +36,7 @@ const MyPage = ({navigation}) => {
           <Text>Haziran 2021' den beri</Text>
         </View>
         <View style={Styles.pagesContainer}>
-          <View style={Styles.pointer}></View>
+          <View style={Styles.pointer} />
           <TouchableOpacity style={Styles.pagesButton}>
             <View style={Styles.pagesButtonIconContainer}>
               <Image
@@ -53,7 +51,7 @@ const MyPage = ({navigation}) => {
               <IconI name={'arrow-forward'} size={20} color="#C8D2F5" />
             </View>
           </TouchableOpacity>
-          <View style={Styles.pointer}></View>
+          <View style={Styles.pointer} />
 
           <TouchableOpacity style={Styles.pagesButton}>
             <View style={Styles.pagesButtonIconContainer}>
@@ -66,7 +64,7 @@ const MyPage = ({navigation}) => {
               <IconI name={'arrow-forward'} size={20} color="#C8D2F5" />
             </View>
           </TouchableOpacity>
-          <View style={Styles.pointer}></View>
+          <View style={Styles.pointer} />
 
           <TouchableOpacity style={Styles.pagesButton}>
             <View style={Styles.pagesButtonIconContainer}>
@@ -79,7 +77,7 @@ const MyPage = ({navigation}) => {
               <IconI name={'arrow-forward'} size={20} color="#C8D2F5" />
             </View>
           </TouchableOpacity>
-          <View style={Styles.pointer}></View>
+          <View style={Styles.pointer} />
         </View>
         <View style={Styles.buttonsContainer}>
           <TouchableOpacity style={Styles.button}>
@@ -111,10 +109,8 @@ const MyPage = ({navigation}) => {
           </TouchableOpacity>
           <TouchableOpacity style={Styles.button}>
             <Text style={Styles.buttonText}>Satıldı</Text>
-
             <View style={Styles.buttonArrowContainer}>
               <Text style={Styles.buttonCountText}>5</Text>
-
               <IconI name={'arrow-forward'} size={20} color="#C8D2F5" />
             </View>
           </TouchableOpacity>
