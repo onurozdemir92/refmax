@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import Iicon from 'react-native-vector-icons/Ionicons';
 import Micon from 'react-native-vector-icons/MaterialIcons';
+import auth from '@react-native-firebase/auth';
 
 import Colors from '../../Screen/Theme/Colors';
 import Styles from './styles';
@@ -11,7 +12,17 @@ interface IFirstPageHeader {
   navigation: any;
 }
 
-const FirstPageHeader = ({avatar, navigation}: IFirstPageHeader) => {
+const FirstPageHeader = ({ avatar, navigation }: IFirstPageHeader) => {
+
+  const singInControl = () => {
+    if (auth().currentUser) {
+      navigation.navigate('MyPage')
+    }
+    else {
+      navigation.navigate('Login', { to: 'MyPage' })
+    }
+  }
+
   avatar =
     'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60';
   return (
@@ -33,7 +44,7 @@ const FirstPageHeader = ({avatar, navigation}: IFirstPageHeader) => {
         </View>
       </View>
       <TouchableOpacity
-        onPress={() => navigation.navigate('MyPage')}
+        onPress={() => singInControl()}
         style={Styles.rightContainer}>
         {avatar ? (
           <Image

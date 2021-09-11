@@ -27,6 +27,8 @@ const Colors = {
   productTitleText: '#00B0FF',
   productButton: '#00B0FF',
   pointerColor: '#C8D2F5',
+  borderColor: '#EAE8E9',
+  darkBorderColor: '#DAD9DA'
 };
 
 export default Colors;

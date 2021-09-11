@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   SafeAreaView,
   FlatList,
@@ -15,11 +15,32 @@ import Header from '../../Components/Header';
 import RefmaxItem from '../../Components/RefmaxItem/intex';
 import ReklamComponent from '../../Components/ReklamComponent';
 import SearchHeader from '../../Components/SearchHeader';
-import {ICategory, IRef} from '../../Helpers/Interfaces';
-import {categorys, refData} from '../../Helpers/TestData';
+import { ICategory, IRef } from '../../Helpers/Interfaces';
+import { categorys, refData } from '../../Helpers/TestData';
+import auth from '@react-native-firebase/auth';
 import Styles from './styles';
 
-const FirstPage = ({navigation}) => {
+const FirstPage = ({ navigation }) => {
+
+  const singout = () => {
+    auth()
+      .signOut()
+      .then(() => console.log('User signed out!'));
+
+  }
+
+  const login = () => {
+    auth().signInWithEmailAndPassword('orotek57@gmail.com', '12345678').then(() => {
+      console.log('giriş yapıldı')
+    }).catch(err => { console.log('hata : ', err) })
+  }
+
+  useEffect(() => {
+    login();
+    // singout()
+  }, []);
+
+
   return (
     <SafeAreaView style={Styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="white" />
@@ -41,10 +62,10 @@ const FirstPage = ({navigation}) => {
         data={refData}
         style={Styles.flatlist}
         numColumns={2}
-        renderItem={({item, index}) => {
+        renderItem={({ item, index }) => {
           return (
             <RefmaxItem
-              onRefPress={(e: IRef) => navigation.push('ProductPage', {Ref: e})}
+              onRefPress={(e: IRef) => navigation.push('ProductPage', { Ref: e })}
               refmax={item}
             />
           );

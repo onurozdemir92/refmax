@@ -1,11 +1,24 @@
 import React from 'react';
-import {View, TouchableOpacity, Text, ViewBase} from 'react-native';
+import { View, TouchableOpacity, Text, ViewBase } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import IconMI from 'react-native-vector-icons/MaterialIcons';
 import Colors from '../../Screen/Theme/Colors';
+import auth from '@react-native-firebase/auth';
 import Styles from './styles';
 
 const TabCustomerComponent = props => {
+
+  const accountControl = (navigate: string) => {
+    if (auth().currentUser) {
+      props.navigation.navigate(navigate)
+    }
+    else {
+      props.navigation.navigate('Login', { to: navigate })
+    }
+    console.log('girişşşşş', auth().currentUser)
+  }
+
+
   return (
     <View style={Styles.container}>
       <TouchableOpacity
@@ -31,7 +44,7 @@ const TabCustomerComponent = props => {
       <TouchableOpacity
         activeOpacity={0.6}
         style={Styles.tabBarButton}
-        onPress={() => props.navigation.navigate('Share')}>
+        onPress={() => { accountControl('Share') }}>
         <View
           style={{
             width: 45,
@@ -44,7 +57,7 @@ const TabCustomerComponent = props => {
       <TouchableOpacity
         activeOpacity={0.6}
         style={Styles.tabBarButton}
-        onPress={() => props.navigation.navigate('ChatPage')}>
+        onPress={() => accountControl('ChatPage')}>
         <Icon
           name={'ios-chatbubble-ellipses-outline'}
           color={props.state.index === 2 ? Colors.ChatColor : '#C0BEBE'}
@@ -54,7 +67,7 @@ const TabCustomerComponent = props => {
       <TouchableOpacity
         activeOpacity={0.6}
         style={Styles.tabBarButton}
-        onPress={() => props.navigation.navigate('FavoritePage')}>
+        onPress={() => accountControl('FavoritePage')}>
         <IconMI
           name={'favorite-border'}
           color={props.state.index === 3 ? Colors.ChatColor : '#C0BEBE'}

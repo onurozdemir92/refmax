@@ -7,10 +7,10 @@
  */
 
 import React from 'react';
-import type {Node} from 'react';
+import type { Node } from 'react';
 
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import SplashScreen from './src/Screen/SplashScreen';
 import ShareScreen from './src/Screen/SharePage';
@@ -21,6 +21,8 @@ import Home from './src/Screen/Home';
 import ProfileSettings from './src/Screen/ProfileSettings';
 import AppSettings from './src/Screen/AppSettings';
 import MyPage from './src/Screen/MyPage';
+import Login from './src/Screen/Login';
+
 
 const Stack = createStackNavigator();
 const App: () => Node = () => {
@@ -29,7 +31,7 @@ const App: () => Node = () => {
       <Stack.Navigator headerMode="none">
         <Stack.Screen
           name="SplashScreen"
-          options={{animationEnabled: true}}
+          options={{ animationEnabled: true }}
           component={SplashScreen}
         />
         <Stack.Screen name="Home" component={Home} />
@@ -39,6 +41,7 @@ const App: () => Node = () => {
         <Stack.Screen name="ImagePage" component={ImagePageScreen} />
         <Stack.Screen name="AppSettings" component={AppSettings} />
         <Stack.Screen name="MyPage" component={MyPage} />
+        <Stack.Screen name="Login" component={Login} />
       </Stack.Navigator>
     </NavigationContainer>
   );

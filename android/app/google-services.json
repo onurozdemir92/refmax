@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "167057069109",
+    "project_id": "refmax",
+    "storage_bucket": "refmax.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167057069109:android:24b90e9e7c8bb3a58d8d7c",
+        "android_client_info": {
+          "package_name": "com.refmax"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "167057069109-rib419bgot7bnoig24ukc8mtukf5lg7l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdRYyf6_kmvsQlyNz174IovH4KvY6Vr4U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "167057069109-rib419bgot7bnoig24ukc8mtukf5lg7l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

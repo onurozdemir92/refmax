@@ -1,14 +1,25 @@
 import React from 'react';
-import {Text, TouchableOpacity, View, ScrollView, Image} from 'react-native';
+import { Text, TouchableOpacity, View, ScrollView, Image } from 'react-native';
 import IconI from 'react-native-vector-icons/Ionicons';
 import MyPageHeader from '../../Components/MyPageHeader';
 import Shoping from '../../../assets/images/shoping.png';
 import Lira from '../../../assets/images/lira.png';
 import Help from '../../../assets/images/help.png';
+import auth from '@react-native-firebase/auth';
 
 import Styles from './styles';
 
-const MyPage = ({navigation}) => {
+const MyPage = ({ navigation }) => {
+
+
+  const singout = () => {
+    auth()
+      .signOut()
+      .then((e) => { console.log('User signed out! : ', e); navigation.replace('Login', { to: 'MyPage' }) }).catch((eer) => console.log('çıkış yapılırken hata oluşstu : ', err))
+
+  }
+
+
   return (
     <View style={Styles.container}>
       <MyPageHeader navigation={navigation} title="Sayfam" />
@@ -117,7 +128,7 @@ const MyPage = ({navigation}) => {
           </TouchableOpacity>
         </View>
         <View style={Styles.logoutContainer}>
-          <TouchableOpacity style={Styles.logoutButton}>
+          <TouchableOpacity onPress={() => singout()} style={Styles.logoutButton}>
             <Text style={Styles.logoutText}>Çıkış Yap</Text>
           </TouchableOpacity>
         </View>
