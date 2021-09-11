@@ -28,7 +28,8 @@ const Colors = {
   productButton: '#00B0FF',
   pointerColor: '#C8D2F5',
   borderColor: '#EAE8E9',
-  darkBorderColor: '#DAD9DA'
+  darkBorderColor: '#DAD9DA',
+  linkTextColor: '#8A8A8A'
 };
 
 export default Colors;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { View, Text, SafeAreaView, TouchableOpacity, TextInput } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/Ionicons';
 import Colors from '../Theme/Colors';
 import auth from '@react-native-firebase/auth';
 
@@ -32,6 +32,10 @@ const Login = ({ navigation, route }) => {
                 </View>
                 <View style={Styles.textInputContainer}>
                     <TextInput onChangeText={(e) => setPassword(e)} secureTextEntry placeholder='Şifre'></TextInput>
+                </View>
+
+                <View style={Styles.registerLinkContainer}>
+                    <TouchableOpacity onPress={() => navigation.replace('Register')}><Text style={Styles.registerLinkText}>Yeni Hesap Oluştur</Text></TouchableOpacity>
                 </View>
 
             </View>

@@ -22,6 +22,8 @@ import ProfileSettings from './src/Screen/ProfileSettings';
 import AppSettings from './src/Screen/AppSettings';
 import MyPage from './src/Screen/MyPage';
 import Login from './src/Screen/Login';
+import Register from './src/Screen/Register';
+
 
 
 const Stack = createStackNavigator();
@@ -42,6 +44,8 @@ const App: () => Node = () => {
         <Stack.Screen name="AppSettings" component={AppSettings} />
         <Stack.Screen name="MyPage" component={MyPage} />
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Register" component={Register} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
