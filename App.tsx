@@ -23,6 +23,10 @@ import AppSettings from './src/Screen/AppSettings';
 import MyPage from './src/Screen/MyPage';
 import Login from './src/Screen/Login';
 import Register from './src/Screen/Register';
+import MyPageSettings from './src/Screen/MyPageSettings';
+import Profile from './src/Screen/Profile';
+
+
 
 
 
@@ -45,6 +49,10 @@ const App: () => Node = () => {
         <Stack.Screen name="MyPage" component={MyPage} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="MyPageSettings" component={MyPageSettings} />
+        <Stack.Screen name="Profile" component={Profile} />
+
+
 
       </Stack.Navigator>
     </NavigationContainer>

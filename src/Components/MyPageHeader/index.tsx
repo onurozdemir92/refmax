@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import IconI from 'react-native-vector-icons/Ionicons';
 import IconMCI from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -10,7 +10,7 @@ interface IMyPageHeader {
   title: string;
 }
 
-const MyPageHeader = ({title, navigation}: IMyPageHeader) => {
+const MyPageHeader = ({ title, navigation }: IMyPageHeader) => {
   return (
     <View style={Styles.container}>
       <TouchableOpacity
@@ -22,7 +22,7 @@ const MyPageHeader = ({title, navigation}: IMyPageHeader) => {
         <Text style={Styles.titleText}>{title}</Text>
       </View>
       <View style={Styles.buttonsContainer}>
-        <TouchableOpacity style={Styles.button}>
+        <TouchableOpacity onPress={() => navigation.navigate('MyPageSettings')} style={Styles.button}>
           <IconI name="settings" size={25} color="#C8D2F5" />
         </TouchableOpacity>
         <TouchableOpacity style={Styles.button}>

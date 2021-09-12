@@ -50,9 +50,11 @@ const TabCustomerComponent = props => {
             width: 45,
             height: 45,
             borderRadius: 222,
-            backgroundColor: 'gray',
-          }}></View>
-        {/* <Icon name={'ios-add-circle'} color="#626262" size={40} /> */}
+            backgroundColor: Colors.MainColor,
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}><Text style={{ color: 'white', fontSize: 25}}>+</Text></View>
+
       </TouchableOpacity>
       <TouchableOpacity
         activeOpacity={0.6}

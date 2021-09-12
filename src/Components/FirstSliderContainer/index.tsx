@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import { View, Text, Image } from 'react-native';
 import Styles from './styles';
 
 const FirstSliderContainer = () => {
@@ -8,11 +8,9 @@ const FirstSliderContainer = () => {
       <View style={Styles.subContainer}>
         <Text>Yakınında binlerce iş var!</Text>
         <Image
-          style={{width: 85, height:55}}
-          source={{
-            uri:
-              'https://images.pexels.com/photos/1083822/pexels-photo-1083822.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
-          }}
+          resizeMode='contain'
+          style={{ width: 85, height: '100%' }}
+          source={require('../../../assets/images/logo.png')}
         />
       </View>
     </View>

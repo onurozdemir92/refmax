@@ -17,33 +17,30 @@ import ReklamComponent from '../../Components/ReklamComponent';
 import SearchHeader from '../../Components/SearchHeader';
 import { ICategory, IRef } from '../../Helpers/Interfaces';
 import { categorys, refData } from '../../Helpers/TestData';
+import changeNavigationBarColor from 'react-native-navigation-bar-color';
 import auth from '@react-native-firebase/auth';
 import Styles from './styles';
 
 const FirstPage = ({ navigation }) => {
 
-  const singout = () => {
-    auth()
-      .signOut()
-      .then(() => console.log('User signed out!'));
+
+  const satusBar = async () => {
+    await changeNavigationBarColor('white', true, false);
 
   }
 
-  const login = () => {
-    auth().signInWithEmailAndPassword('orotek57@gmail.com', '12345678').then(() => {
-      console.log('giriş yapıldı')
-    }).catch(err => { console.log('hata : ', err) })
-  }
+
 
   useEffect(() => {
-    login();
-    // singout()
+    satusBar();
+
+
   }, []);
 
 
   return (
     <SafeAreaView style={Styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="white" />
+      <StatusBar backgroundColor='white' barStyle='dark-content' />
       {/* <Header /> */}
       {/* <SearchHeader /> */}
       <FirstPageHeader navigation={navigation} />
@@ -65,7 +62,7 @@ const FirstPage = ({ navigation }) => {
         renderItem={({ item, index }) => {
           return (
             <RefmaxItem
-              onRefPress={(e: IRef) => navigation.push('ProductPage', { Ref: e })}
+              onRefPress={(e: IRef) => navigation.push('ProductPage', { Ref: e, productId: 20 })}
               refmax={item}
             />
           );

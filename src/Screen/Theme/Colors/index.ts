@@ -29,7 +29,10 @@ const Colors = {
   pointerColor: '#C8D2F5',
   borderColor: '#EAE8E9',
   darkBorderColor: '#DAD9DA',
-  linkTextColor: '#8A8A8A'
+  linkTextColor: '#8A8A8A',
+  textGray: '#B6B4B4',
+  textBlack: 'black',
+  arrowGray: '#B6B4B4'
 };
 
 export default Colors;

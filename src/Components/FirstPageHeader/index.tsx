@@ -29,9 +29,7 @@ const FirstPageHeader = ({ avatar, navigation }: IFirstPageHeader) => {
     <View style={Styles.container}>
       <View style={Styles.leftContainer}>
         <View style={Styles.leftSubContainer}>
-          <View>
-            <Text>JetMio</Text>
-          </View>
+         <Image resizeMode='contain' style={{width:40,height:40,marginRight:20}} source={require('../../../assets/images/logo.png')} />
           <TouchableOpacity style={Styles.locationContainer}>
             <Iicon name="location" size={17} color={Colors.locationColors} />
             <Text style={Styles.locationText}>Ankara, Yenikent</Text>

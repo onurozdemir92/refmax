@@ -13,8 +13,26 @@ const Login = ({ navigation, route }) => {
 
 
     const singIn = () => {
-        auth().signInWithEmailAndPassword(email, password).then((e) => { console.log('girişden dönen : ', e); to ? navigation.replace(to) : navigation.replace('MyPage') }).catch((err) => console.log('errr : ', err))
-        console.log('giriş bilgileri : ', email, password)
+        auth().signInWithEmailAndPassword(email, password).then((e) => {
+            console.log('girişden dönen : ', e); to ? navigation.replace(to)
+                : navigation.replace('MyPage')
+        }).catch((err) => {
+            console.log('errr : ', err.code)
+            switch (err.code) {
+
+                case 'auth/wrong-password':
+                    console.log('Şİfre Yanlış')
+                    break;
+                case 'auth/network-request-failed':
+                    console.log('İnternet bağlantı Problemi')
+                    break;
+                case 'auth/user-not-found':
+                    console.log('böylebir kullanıcı bulunamadı');
+                    break;
+                default:
+                    console.log('bir hata oluştu : ', err.code)
+            }
+        })
     }
 
     return (

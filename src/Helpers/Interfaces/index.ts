@@ -29,6 +29,13 @@ export interface IRef {
   status?: TRefStatus;
   premium?: boolean;
 }
+export interface IProduct {
+  productId: string;
+  userId: string;
+  createdDate: string;
+  productTitle: string;
+  productImage: string;
+}
 
 export interface ICategory {
   /**kategori id'si */

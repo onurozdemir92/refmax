@@ -13,7 +13,7 @@ const Styles = StyleSheet.create({
   subContainer: {
     width: width * 0.7,
     backgroundColor: Colors.sliderBackground,
-    height: 70,
+    height: 90,
     flexDirection: 'row',
     alignItems: 'center',
     borderRadius: 10,

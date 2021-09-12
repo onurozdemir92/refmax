@@ -1,6 +1,6 @@
-import {Dimensions, StyleSheet} from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 import Colors from '../Theme/Colors';
-const {height, width} = Dimensions.get('window');
+const { height, width } = Dimensions.get('window');
 const Styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -77,6 +77,28 @@ const Styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Colors.pointerColor,
   },
+  userInfoContainer: {
+    width: '100%',
+    flexDirection: 'row',
+    paddingHorizontal: 40,
+    paddingVertical: 10,
+    alignItems: 'center'
+  },
+  userAvatar: {
+    width: 40,
+    height: 40,
+    borderRadius: 20
+  },
+  userInfoTextContainer: {
+    flex: 1,
+    marginLeft: 10
+  },
+  userNameContainer: {
+    flexDirection: 'row'
+  },
+  userName: {
+    fontWeight: 'bold'
+  }
 });
 
 export default Styles;

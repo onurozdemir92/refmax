@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import Colors from '../../Screen/Theme/Colors';
 
 const Styles = StyleSheet.create({
@@ -31,6 +31,8 @@ const Styles = StyleSheet.create({
   leftSubContainer: {
     alignItems: 'center',
     justifyContent: 'center',
+    flex: 1,
+    flexDirection: 'row'
   },
   locationContainer: {
     width: '70%',
