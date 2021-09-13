@@ -14,7 +14,9 @@ import HorizontalImagesSlider from '../../Components/HorizontalImagesSlider';
 import ProductPageHeader from '../../Components/ProductPageHeader';
 import ProductSeenInfo from '../../Components/ProductSeenInfo';
 import { getProductInfo } from '../../Helpers/Api/Product';
-import { getUserInfo } from '../../Helpers/Api/User';
+import { createUserInfo, getUserInfo } from '../../Helpers/Api/User';
+import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
+
 import Styles from './styles';
 
 const ProductPage = ({ navigation, route }) => {
@@ -34,6 +36,9 @@ const ProductPage = ({ navigation, route }) => {
     } else {
       return null
     }
+  }
+  const open = () => {
+    { navigation.navigate('Profile', { userId: user?.userId }) }
   }
 
   useEffect(() => {
@@ -81,7 +86,7 @@ const ProductPage = ({ navigation, route }) => {
         <View style={Styles.pointerContainer}>
           <View style={Styles.pointer} />
         </View>
-        <TouchableOpacity onPress={() => navigation.navigate('Profile', { userId: user?.userId })} style={Styles.userInfoContainer}>
+        <TouchableOpacity onPress={() => open()} style={Styles.userInfoContainer}>
           <Image source={{ uri: 'https://images.unsplash.com/photo-1618641986557-1ecd230959aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80' }} style={Styles.userAvatar} />
           <View style={Styles.userInfoTextContainer}>
             <View style={Styles.userNameContainer}><Text style={Styles.userName}>Onur Rahmi Özdemir</Text></View>
@@ -92,6 +97,16 @@ const ProductPage = ({ navigation, route }) => {
         <View style={Styles.pointerContainer}>
           <View style={Styles.pointer} />
         </View>
+        <View style={{ width: '100%', alignItems: 'center' }}>
+          <BannerAd
+            unitId={TestIds.BANNER}
+            size={BannerAdSize.MEDIUM_RECTANGLE}
+
+            requestOptions={{
+              requestNonPersonalizedAdsOnly: true,
+            }} />
+        </View>
+
       </ScrollView>
     </SafeAreaView>
   );

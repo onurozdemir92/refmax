@@ -1,4 +1,5 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
+import Colors from '../Theme/Colors';
 
 const Styles = StyleSheet.create({
   container: {
@@ -12,7 +13,7 @@ const Styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 30,
     marginBottom: 30,
-    backgroundColor: '#C70039',
+    backgroundColor: Colors.MainColor,
   },
   buttonText: {
     color: 'white',

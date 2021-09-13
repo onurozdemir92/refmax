@@ -15,12 +15,10 @@ const Register = ({ navigation }) => {
 
         if (password === passwordAgain) {
 
+            
             auth().createUserWithEmailAndPassword(email, password)
                 .then((e) => {
                     console.log('kayıt başarılı : ', e);
-                    // auth().sendSignInLinkToEmail(e.user.email)
-                    //     .then((e) => console.log('email gönderildi : ', e))
-                    //     .catch((err) => console.log('mail gönderilirken hata oluştu : ', err));
                     navigation.replace('Home');
                 })
                 .catch((err) => console.log('kayıt yapılırken hata oluştu : ', err))

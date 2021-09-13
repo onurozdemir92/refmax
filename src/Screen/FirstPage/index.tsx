@@ -18,6 +18,8 @@ import SearchHeader from '../../Components/SearchHeader';
 import { ICategory, IRef } from '../../Helpers/Interfaces';
 import { categorys, refData } from '../../Helpers/TestData';
 import changeNavigationBarColor from 'react-native-navigation-bar-color';
+import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
+
 import auth from '@react-native-firebase/auth';
 import Styles from './styles';
 
@@ -28,8 +30,6 @@ const FirstPage = ({ navigation }) => {
     await changeNavigationBarColor('white', true, false);
 
   }
-
-
 
   useEffect(() => {
     satusBar();
@@ -44,6 +44,13 @@ const FirstPage = ({ navigation }) => {
       {/* <Header /> */}
       {/* <SearchHeader /> */}
       <FirstPageHeader navigation={navigation} />
+      <BannerAd
+        unitId={TestIds.BANNER}
+        size={BannerAdSize.ADAPTIVE_BANNER}
+
+        requestOptions={{
+          requestNonPersonalizedAdsOnly: true,
+        }} />
       <View style={Styles.CategoryContainer}>
         <ScrollView
           showsHorizontalScrollIndicator={false}
@@ -61,10 +68,13 @@ const FirstPage = ({ navigation }) => {
         numColumns={2}
         renderItem={({ item, index }) => {
           return (
+
             <RefmaxItem
               onRefPress={(e: IRef) => navigation.push('ProductPage', { Ref: e, productId: 20 })}
               refmax={item}
             />
+
+
           );
         }}
       />

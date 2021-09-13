@@ -1,14 +1,14 @@
 type TScore = 1 | 2 | 3 | 4 | 5;
-export interface IUser {
-  id?: string;
-  username?: string;
-  password?: string;
-  email?: string;
-  avatar?: string;
-  tel?: string;
-  sellerName?: string;
-  score?: TScore;
-}
+// export interface IUser {
+//   id?: string;
+//   username?: string;
+//   password?: string;
+//   email?: string;
+//   avatar?: string;
+//   tel?: string;
+//   sellerName?: string;
+//   score?: TScore;
+// }
 
 type TRefStatus = 0 | 1 | 2;
 export interface IRef {
@@ -35,6 +35,20 @@ export interface IProduct {
   createdDate: string;
   productTitle: string;
   productImage: string;
+  cityId: number;
+  districtId: number;
+  followed?: boolean;
+  subCategoryId: string;
+  productStatus: number;
+}
+
+export interface IUser {
+  address: string;
+  firstname: string;
+  lastname: string;
+  profileType: string;
+  userId: string;
+  shopId: string;
 }
 
 export interface ICategory {

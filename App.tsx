@@ -25,6 +25,8 @@ import Login from './src/Screen/Login';
 import Register from './src/Screen/Register';
 import MyPageSettings from './src/Screen/MyPageSettings';
 import Profile from './src/Screen/Profile';
+import Chating from './src/Screen/Chating';
+
 
 
 
@@ -51,6 +53,8 @@ const App: () => Node = () => {
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="MyPageSettings" component={MyPageSettings} />
         <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="Chating" component={Chating} />
+
 
 
 

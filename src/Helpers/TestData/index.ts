@@ -219,4 +219,20 @@ export const refData: IRef[] = [
     state: 'Sinop',
     premium: true,
   },
+  {
+    id: '11',
+    country: 'Türkiye',
+    description: 'dlaksdk kdlasdlşasklş lsldkalskd lksaldkla klaskdlaskd',
+    district: 'gerze',
+    favorite: true,
+    title: 'Apple 6s Plus',
+    images: [
+      'https://productimages.hepsiburada.net/s/36/320/10510584676402.jpg',
+      'https://productimages.hepsiburada.net/s/7/550/9749718859826.jpg/format:webp',
+    ],
+    price: '10000',
+    userId: '1',
+    state: 'Sinop',
+    premium: true,
+  },
 ];
