@@ -12,7 +12,7 @@ const Styles = StyleSheet.create({
     paddingBottom: 15,
   },
   flatlist: {
-    backgroundColor: '#DDDEDD',
+    backgroundColor: '#ECECEC',
   },
   sliderScroll: {
     paddingVertical: 5,

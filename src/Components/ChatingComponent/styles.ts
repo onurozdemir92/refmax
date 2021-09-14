@@ -30,6 +30,10 @@ const Styles = StyleSheet.create({
         borderBottomLeftRadius: 20,
         borderTopRightRadius: 10,
         borderBottomRightRadius: 10
+    },
+    messageInfo: {
+        width: '100%',
+        flexDirection: 'row'
     }
 });
 

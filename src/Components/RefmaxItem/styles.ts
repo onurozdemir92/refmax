@@ -7,8 +7,8 @@ const Styles = StyleSheet.create({
     width: width / 2,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 3,
-    padding: 5,
+    marginBottom: 1,
+    padding: 3,
   },
   subContainer: {
     width: '100%',
