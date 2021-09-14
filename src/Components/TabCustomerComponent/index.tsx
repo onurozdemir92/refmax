@@ -9,13 +9,7 @@ import Styles from './styles';
 const TabCustomerComponent = props => {
 
   const accountControl = (navigate: string) => {
-    if (auth().currentUser) {
-      props.navigation.navigate(navigate)
-    }
-    else {
-      props.navigation.navigate('Login', { to: navigate })
-    }
-    console.log('girişşşşş', auth().currentUser)
+    props.navigation.navigate(navigate)
   }
 
 

@@ -1,10 +1,34 @@
-import React from 'react';
-import {FlatList, SafeAreaView, Text, View} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { FlatList, SafeAreaView, Text, View } from 'react-native';
 import RefmaxHorizontalItem from '../../Components/RefmaxHorizontalItem';
-import {IRef} from '../../Helpers/Interfaces';
-import Styles from './styles';
+import { IRef } from '../../Helpers/Interfaces';
+import auth from '@react-native-firebase/auth';
 
-const FavoritePage = ({navigation}) => {
+import Styles from './styles';
+import SingInComponent from '../../Components/SingInComponent';
+
+const FavoritePage = ({ navigation }) => {
+  const [accountState, setAccountState] = useState<boolean>();
+
+  const accountControl = () => {
+
+    auth().onAuthStateChanged((user) => {
+      if (user) {
+        setAccountState(true)
+      }
+      else {
+        setAccountState(false)
+      }
+    })
+
+  }
+
+  useEffect(() => {
+    accountControl()
+
+  }, [])
+
+
   const data: IRef[] = [
     {
       id: '1',
@@ -206,25 +230,30 @@ const FavoritePage = ({navigation}) => {
       date: new Date(),
     },
   ];
-  return (
-    <SafeAreaView style={Styles.container}>
-      <View style={Styles.headerContainer}>
-        <Text style={Styles.headerTitle}>Beğenilenler</Text>
-      </View>
-      <FlatList
-        data={data}
-        renderItem={item => {
-          return (
-            <RefmaxHorizontalItem
-              navigation={navigation}
-              key={item.item.id}
-              refmax={item.item}
-            />
-          );
-        }}
-      />
-    </SafeAreaView>
-  );
+
+  if (accountState) {
+    return (
+      <SafeAreaView style={Styles.container}>
+        <View style={Styles.headerContainer}>
+          <Text style={Styles.headerTitle}>Beğenilenler</Text>
+        </View>
+        <FlatList
+          data={data}
+          renderItem={item => {
+            return (
+              <RefmaxHorizontalItem
+                navigation={navigation}
+                key={item.item.id}
+                refmax={item.item}
+              />
+            );
+          }}
+        />
+      </SafeAreaView>
+    );
+  } else {
+    return (<SingInComponent to='Go' navigation={navigation} />)
+  }
 };
 
 export default FavoritePage;

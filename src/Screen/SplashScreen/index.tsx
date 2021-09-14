@@ -14,7 +14,7 @@ const SplashScreen = ({ navigation }) => {
     let timer;
     timer = setTimeout(() => {
       clearTimeout(timer);
-      navigation.navigate('Home');
+      navigation.replace('Home');
     }, 2000);
   });
   return (

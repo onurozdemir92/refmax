@@ -7,21 +7,31 @@ import auth from '@react-native-firebase/auth';
 import Styles from './styles';
 
 const Login = ({ navigation, route }) => {
-    const [email, setEmail] = useState<string>('')
-    const [password, setPassword] = useState<string>('')
+    const [email, setEmail] = useState<string>('onurrahmi74@gmail.com')
+    const [password, setPassword] = useState<string>('123456')
     const { to } = route.params;
 
 
     const singIn = () => {
         console.log('xxxxxxxxxxx ', password, email)
-        try{
+        try {
             auth().signInWithEmailAndPassword(email, password).then((e) => {
-                console.log('girişden dönen : ', e); to ? navigation.replace(to)
-                    : navigation.replace('MyPage')
+                if (to) {
+
+                    to === 'Go' ? navigation.pop() : navigation.replace(to)
+                } else {
+
+                    navigation.replace('MyPage')
+                }
+
+
+
+
+
             }).catch((err) => {
                 console.log('errr : ', err.code)
                 switch (err.code) {
-    
+
                     case 'auth/wrong-password':
                         console.log('Şİfre Yanlış')
                         break;
@@ -35,8 +45,8 @@ const Login = ({ navigation, route }) => {
                         console.log('bir hata oluştu : ', err.code)
                 }
             })
-        }catch{(err)=>console.log('hata oluştu',err)}
-        
+        } catch { (err) => console.log('hata oluştu', err) }
+
     }
 
     return (

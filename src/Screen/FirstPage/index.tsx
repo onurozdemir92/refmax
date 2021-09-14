@@ -44,14 +44,14 @@ const FirstPage = ({ navigation }) => {
       {/* <Header /> */}
       {/* <SearchHeader /> */}
       <FirstPageHeader navigation={navigation} />
-      <BannerAd
+      {/* <BannerAd
         unitId={TestIds.BANNER}
         size={BannerAdSize.ADAPTIVE_BANNER}
 
         requestOptions={{
           requestNonPersonalizedAdsOnly: true,
-        }} />
-      <View style={Styles.CategoryContainer}>
+        }} /> */}
+      {/* <View style={Styles.CategoryContainer}>
         <ScrollView
           showsHorizontalScrollIndicator={false}
           style={Styles.sliderScroll}
@@ -61,7 +61,7 @@ const FirstPage = ({ navigation }) => {
             <FirstSliderContainer key={index} />
           ))}
         </ScrollView>
-      </View>
+      </View> */}
       <FlatList
         data={refData}
         style={Styles.flatlist}

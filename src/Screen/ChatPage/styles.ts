@@ -56,7 +56,8 @@ const Styles = StyleSheet.create({
   },
   lastMessageDateText: {
     color: Colors.textGray
-  }
+  },
+  
 });
 
 export default Styles;
