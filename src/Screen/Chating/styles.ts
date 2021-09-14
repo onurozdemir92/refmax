@@ -59,6 +59,28 @@ const Styles = StyleSheet.create({
         marginLeft: 10,
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    productContainer: {
+        width: '100%',
+        backgroundColor: 'white',
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        flexDirection: 'row'
+    },
+    productImage: {
+        width: 50,
+        height: 50
+    },
+    productInfoContainer: {
+        flex: 1,
+        marginLeft: 10
+    },
+    productTitle: {
+        color: Colors.MainColor,
+        fontWeight: 'bold'
+    },
+    productDescription: {
+        color: Colors.textGray
     }
 });
 
