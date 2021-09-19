@@ -37,8 +37,8 @@ export interface IProduct {
   productImage: string;
   cityId: number;
   districtId: number;
-  followed?: boolean;
   subCategoryId: string;
+  categoryId:string;
   productStatus: number;
 }
 
@@ -49,6 +49,22 @@ export interface IUser {
   profileType: string;
   userId: string;
   shopId: string;
+}
+
+export interface IProductChatItem {
+  createdAt: Date;
+  id: string;
+  productId: string;
+  users: Array<string>
+}
+
+export interface IProductChatMessages {
+  id:string;
+  sendDate: string;
+  from: string;
+  productChatItemId: string;
+  text: string;
+  to: string;
 }
 
 export interface ICategory {
