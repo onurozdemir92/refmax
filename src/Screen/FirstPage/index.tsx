@@ -7,6 +7,7 @@ import {
   Text,
   ScrollView,
   Linking,
+  Dimensions
 } from 'react-native';
 import CategoryItem from '../../Components/CategoryItem';
 import FirstPageHeader from '../../Components/FirstPageHeader';
@@ -22,7 +23,7 @@ import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
 
 import auth from '@react-native-firebase/auth';
 import Styles from './styles';
-
+const { width } = Dimensions.get('window')
 const FirstPage = ({ navigation }) => {
 
 
@@ -68,13 +69,12 @@ const FirstPage = ({ navigation }) => {
         numColumns={2}
         renderItem={({ item, index }) => {
           return (
-
-            <RefmaxItem
-              onRefPress={(e: IRef) => navigation.push('ProductPage', { Ref: e, productId: 20 })}
-              refmax={item}
-            />
-
-
+           
+              <RefmaxItem
+                onRefPress={(e: IRef) => navigation.push('ProductPage', { Ref: e, productId: 20 })}
+                refmax={item}
+              />
+              
           );
         }}
       />

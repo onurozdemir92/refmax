@@ -49,7 +49,8 @@ const Styles = StyleSheet.create({
         width: '80%',
         backgroundColor: 'white',
         borderRadius: 30,
-        paddingHorizontal: 10
+        paddingHorizontal: 10,
+        color:'black'
     },
     sendButton: {
         width: 46,

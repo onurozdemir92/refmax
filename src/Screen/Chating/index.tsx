@@ -2,55 +2,43 @@ import React, { useEffect, useState } from 'react'
 import { View, Text, SafeAreaView, TouchableOpacity, Image, TextInput, FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 import ChatingComponent from '../../Components/ChatingComponent';
+import { getMessages, sendMessage } from '../../Helpers/Api/Messages';
+import uuid from 'react-native-uuid';
+import auth from '@react-native-firebase/auth';
+
 import Colors from '../Theme/Colors';
 
 import Styles from './styles'
 
-const Chating = ({ navigation }) => {
+const Chating = ({ navigation, route }) => {
+    const chatItemId = route.params.productChatId
+    const userId = route.params.userId
 
 
     const [messages, setMessages] = useState<any[]>();
+
+    const getMessagesData = () => {
+        return getMessages(chatItemId, (e) => {
+            console.log('gelen mesej ', e)
+            setMessages(e)
+        });
+
+    }
+
+
+    useEffect(() => {
+        const unsubscribe = getMessagesData()
+        return () => { unsubscribe(); setMessages([]) }
+    }, [])
+
     const [text, setText] = useState<string>();
     const send = () => {
         if (text !== '') {
 
-            setMessages(t => [{ userId: '1', date: new Date(), text: text }, ...t]);
+            sendMessage({ sendDate: new Date().toString(), from: auth().currentUser.uid, productChatItemId: chatItemId, text: text, to: userId, id: uuid.v4().toString() })
             setText('');
         }
     }
-
-
-
-    const data = [
-        { userId: '1', text: 'merhaba', date: new Date() },
-        { userId: '2', text: 'selam', date: new Date() },
-        { userId: '2', text: 'Bu kazağın bedeni ne ?', date: new Date() },
-        { userId: '1', text: 'Hangi renk bu Kazak', date: new Date() },
-        { userId: '2', text: 'Sanane lan', date: new Date() },
-        { userId: '1', text: 'Sus be', date: new Date() },
-        { userId: '2', text: 'Görmüyormusun salak yazıyor orada kendin baksana gerize kalı mal ', date: new Date() },
-        { userId: '2', text: 'sanane lan istediğimi yazarın sanamı soruca ', date: new Date() },
-        { userId: '1', text: 'hadi lan oradan', date: new Date() },
-        { userId: '1', text: 'hebele hüvelle', date: new Date() },
-        { userId: '2', text: 'bişeyler flan', date: new Date() },
-        { userId: '1', text: 'öyle böyle işte', date: new Date() },
-        { userId: '2', text: 'Görmüyormusun salak yazıyor orada kendin baksana gerize kalı mal ', date: new Date() },
-        { userId: '2', text: 'sanane lan istediğimi yazarın sanamı soruca ', date: new Date() },
-        { userId: '1', text: 'hadi lan oradan', date: new Date() },
-        { userId: '1', text: 'hebele hüvelle', date: new Date() },
-        { userId: '2', text: 'bişeyler flan', date: new Date() },
-        { userId: '1', text: 'öyle böyle işte', date: new Date() },
-        { userId: '2', text: 'Görmüyormusun salak yazıyor orada kendin baksana gerize kalı mal ', date: new Date() },
-        { userId: '2', text: 'sanane lan istediğimi yazarın sanamı soruca ', date: new Date() },
-        { userId: '1', text: 'hadi lan oradan', date: new Date() },
-        { userId: '1', text: 'hebele hüvelle', date: new Date() },
-        { userId: '2', text: 'bişeyler flan', date: new Date() },
-        { userId: '1', text: 'öyle böyle işte', date: new Date() },
-    ]
-    useEffect(() => {
-        setMessages(data)
-
-    }, [])
 
     return (
         <SafeAreaView style={Styles.container}>

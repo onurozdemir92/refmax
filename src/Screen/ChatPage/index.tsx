@@ -1,22 +1,41 @@
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, ScrollView, Text, View, Image, TouchableOpacity } from 'react-native';
+import { SafeAreaView, ScrollView, Text, View, Image, TouchableOpacity, FlatList } from 'react-native';
 import Colors from '../Theme/Colors';
 import auth from '@react-native-firebase/auth';
 
 import Styles from './styles';
 import SingInComponent from '../../Components/SingInComponent';
+import { getChatItems } from '../../Helpers/Api/ChatItem';
+import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
+import firestore from '@react-native-firebase/firestore';
+import { getProductInfo } from '../../Helpers/Api/Product';
+import ChatItemComponent from '../../Components/ChatItemComponent';
 
 const ChatPage = ({ navigation }) => {
 
 
   const [accountState, setAccountState] = useState<boolean>();
+  const [chatItems, setChatItems] = useState<any>();
+
 
   const accountControl = () => {
 
-    auth().onAuthStateChanged((user) => {
+    return auth().onAuthStateChanged(async (user) => {
       if (user) {
-        setAccountState(true)
+        setAccountState(true);
+        return firestore().collection('productChatItem').where('users', 'array-contains', user.uid)
+          .onSnapshot(async (response) => {
+            let data = [];
+            await response.docs.map(async (item) => {
+
+              data.push(item.data())
+
+            }
+            )
+            setChatItems(data.sort(((a, b) => { return new Date(b.createdAt) - new Date(a.createdAt) })))
+          })
       }
+
       else {
         setAccountState(false)
       }
@@ -25,8 +44,9 @@ const ChatPage = ({ navigation }) => {
   }
 
   useEffect(() => {
-    accountControl()
 
+    const unsubscribe = accountControl()
+    return () => unsubscribe()
   }, [])
 
 
@@ -36,33 +56,20 @@ const ChatPage = ({ navigation }) => {
         <View style={Styles.headerContainer}>
           <Text style={Styles.headerTitle}>Konuşmalar</Text>
         </View>
+        <BannerAd
+          unitId={TestIds.BANNER}
+          size={BannerAdSize.ADAPTIVE_BANNER}
 
-        <ScrollView>
+          requestOptions={{
+            requestNonPersonalizedAdsOnly: true,
+          }} />
+        <FlatList
+          data={chatItems}
+          renderItem={(item) =>
+            <ChatItemComponent item={item.item} id={item.index} key={item.index} />
+          }
 
-
-          <TouchableOpacity onPress={() => navigation.navigate('Chating')} activeOpacity={0.7} style={Styles.chatItemContainer}>
-            <Image resizeMode='contain' style={Styles.productImage} source={{ uri: 'data:image/jpeg;base64,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' }} />
-            <View style={Styles.messageInfoContainer}>
-              <View style={Styles.userContainer}>
-                <Text style={Styles.userTitleText}>Onur Rahmi Özdemir</Text>
-                <Image style={Styles.userAvatar} source={{ uri: 'https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' }} />
-              </View>
-              <Text style={Styles.productTitle}>Mavi Kazak</Text>
-              <Text style={Styles.LastMessageText}>Tamam, Teşekkürler</Text>
-
-            </View>
-            <View>
-              <Text style={Styles.lastMessageDateText}>Bugün 10:30</Text>
-            </View>
-          </TouchableOpacity>
-
-
-
-
-
-        </ScrollView>
-
-
+        />
       </SafeAreaView>
     );
   } else {

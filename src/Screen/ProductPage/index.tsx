@@ -16,8 +16,10 @@ import ProductSeenInfo from '../../Components/ProductSeenInfo';
 import { getProductInfo } from '../../Helpers/Api/Product';
 import { createUserInfo, getUserInfo } from '../../Helpers/Api/User';
 import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
+import auth from '@react-native-firebase/auth';
 
 import Styles from './styles';
+import { sendMessage, setMessagesItem } from '../../Helpers/Api/Messages';
 
 const ProductPage = ({ navigation, route }) => {
 
@@ -37,6 +39,17 @@ const ProductPage = ({ navigation, route }) => {
       return null
     }
   }
+
+  const createChatItem = async () => {
+    console.log('produnt id', productId)
+    const response = await setMessagesItem({ productId: '26', users: [user?.userId, auth().currentUser.uid] });
+
+    if(response){
+      navigation.navigate('Chating', { productChatId: response.id, userId: user?.userId })
+    }
+    console.log('mesaj itemnnn :', response)
+  }
+
   const open = () => {
     { navigation.navigate('Profile', { userId: user?.userId }) }
   }
@@ -62,7 +75,7 @@ const ProductPage = ({ navigation, route }) => {
           <Text style={Styles.titleText}>{product?.productTitle}</Text>
         </View>
         <View style={Styles.buttonsContainer}>
-          <TouchableOpacity style={[Styles.button, Styles.backgroundButton]}>
+          <TouchableOpacity onPress={() => createChatItem()} style={[Styles.button, Styles.backgroundButton]}>
             <Text style={[Styles.buttonText, { color: 'white' }]}>
               Daha hızlı sat
             </Text>

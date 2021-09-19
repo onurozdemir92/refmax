@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, SafeAreaView, Text, View } from 'react-native';
+import { FlatList, SafeAreaView, Text, View, Dimensions } from 'react-native';
 import RefmaxHorizontalItem from '../../Components/RefmaxHorizontalItem';
 import { IRef } from '../../Helpers/Interfaces';
 import auth from '@react-native-firebase/auth';
 
 import Styles from './styles';
 import SingInComponent from '../../Components/SingInComponent';
-
+const { width, height } = Dimensions.get('window')
 const FavoritePage = ({ navigation }) => {
   const [accountState, setAccountState] = useState<boolean>();
 
@@ -241,11 +241,13 @@ const FavoritePage = ({ navigation }) => {
           data={data}
           renderItem={item => {
             return (
-              <RefmaxHorizontalItem
-                navigation={navigation}
-                key={item.item.id}
-                refmax={item.item}
-              />
+              <>
+                <RefmaxHorizontalItem
+                  navigation={navigation}
+                  key={item.item.id}
+                  refmax={item.item}
+                />
+              </>
             );
           }}
         />
