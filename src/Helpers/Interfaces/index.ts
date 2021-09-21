@@ -34,12 +34,16 @@ export interface IProduct {
   userId: string;
   createdDate: string;
   productTitle: string;
-  productImage: string;
+  productImages: string[];
   cityId: number;
   districtId: number;
   subCategoryId: string;
-  categoryId:string;
+  categoryId: string;
   productStatus: number;
+  productCity: string;
+  productDistrict: string;
+  productPrice: string;
+  docId: string;
 }
 
 export interface IUser {
@@ -59,7 +63,7 @@ export interface IProductChatItem {
 }
 
 export interface IProductChatMessages {
-  id:string;
+  id: string;
   sendDate: string;
   from: string;
   productChatItemId: string;

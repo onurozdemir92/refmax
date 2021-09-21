@@ -26,6 +26,10 @@ import Register from './src/Screen/Register';
 import MyPageSettings from './src/Screen/MyPageSettings';
 import Profile from './src/Screen/Profile';
 import Chating from './src/Screen/Chating';
+import CreateProduct from './src/Screen/CreateProduct';
+import FullScreenSlider from './src/Screen/FullScreenSlider';
+
+
 
 
 
@@ -54,6 +58,10 @@ const App: () => Node = () => {
         <Stack.Screen name="MyPageSettings" component={MyPageSettings} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Chating" component={Chating} />
+        <Stack.Screen name="CreateProduct" component={CreateProduct} />
+        <Stack.Screen name="FullScreenSlider" component={FullScreenSlider} />
+
+
 
 
 

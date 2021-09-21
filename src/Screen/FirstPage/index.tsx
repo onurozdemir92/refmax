@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   SafeAreaView,
   FlatList,
@@ -16,21 +16,37 @@ import Header from '../../Components/Header';
 import RefmaxItem from '../../Components/RefmaxItem/intex';
 import ReklamComponent from '../../Components/ReklamComponent';
 import SearchHeader from '../../Components/SearchHeader';
-import { ICategory, IRef } from '../../Helpers/Interfaces';
+import { ICategory, IProduct, IRef } from '../../Helpers/Interfaces';
 import { categorys, refData } from '../../Helpers/TestData';
 import changeNavigationBarColor from 'react-native-navigation-bar-color';
 import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
+import IconMCI from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import auth from '@react-native-firebase/auth';
 import Styles from './styles';
+import { getAllProducts } from '../../Helpers/Api/Product';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import Colors from '../Theme/Colors';
 const { width } = Dimensions.get('window')
 const FirstPage = ({ navigation }) => {
+
+  const [producsState, setProductsState] = useState<IProduct[]>([])
 
 
   const satusBar = async () => {
     await changeNavigationBarColor('white', true, false);
 
   }
+  const getProducts = async () => {
+    const products: IProduct[] = await getAllProducts();
+    setProductsState(products)
+
+
+  }
+
+  useEffect(() => {
+    getProducts()
+  }, [])
 
   useEffect(() => {
     satusBar();
@@ -45,6 +61,7 @@ const FirstPage = ({ navigation }) => {
       {/* <Header /> */}
       {/* <SearchHeader /> */}
       <FirstPageHeader navigation={navigation} />
+
       {/* <BannerAd
         unitId={TestIds.BANNER}
         size={BannerAdSize.ADAPTIVE_BANNER}
@@ -64,19 +81,30 @@ const FirstPage = ({ navigation }) => {
         </ScrollView>
       </View> */}
       <FlatList
-        data={refData}
+        ListHeaderComponent={
+          <View style={Styles.fullScreenSliderButtonContainer}>
+            <TouchableOpacity onPress={() => navigation.navigate('FullScreenSlider', { datas: producsState })} style={Styles.fullScreenSliderButton}>
+              <IconMCI name='party-popper' size={20} color={Colors.MainColor} />
+              <Text style={Styles.fullScreenSliderButtonText}>Yeni Özellik</Text>
+            </TouchableOpacity>
+          </View>
+        }
+        data={producsState}
         style={Styles.flatlist}
         numColumns={2}
         renderItem={({ item, index }) => {
           return (
-           
-              <RefmaxItem
-                onRefPress={(e: IRef) => navigation.push('ProductPage', { Ref: e, productId: 20 })}
-                refmax={item}
-              />
-              
+
+            <RefmaxItem
+              key={item.productId}
+              onRefPress={() => navigation.push('ProductPage', { productId: item.productId })}
+              item={item}
+            />
+
+
           );
         }}
+        keyExtractor={(item) => item.productId}
       />
     </SafeAreaView>
   );

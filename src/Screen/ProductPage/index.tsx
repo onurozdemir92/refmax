@@ -42,9 +42,9 @@ const ProductPage = ({ navigation, route }) => {
 
   const createChatItem = async () => {
     console.log('produnt id', productId)
-    const response = await setMessagesItem({ productId: '26', users: [user?.userId, auth().currentUser.uid] });
+    const response = await setMessagesItem({ productId: productId, users: [user?.userId, auth().currentUser.uid] });
 
-    if(response){
+    if (response) {
       navigation.navigate('Chating', { productChatId: response.id, userId: user?.userId })
     }
     console.log('mesaj itemnnn :', response)

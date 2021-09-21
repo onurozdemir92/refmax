@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import { SafeAreaView, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { getShareDates } from '../../Helpers/Api';
@@ -39,16 +39,18 @@ const SharePage = ({ navigation }) => {
   if (accountState) {
     return (
       <SafeAreaView style={Styles.container}>
-        <View style={Styles.categoryContainer}>
-          {data.map(item => (
-            <TouchableOpacity
-              key={item.Id}
-              onPress={() => navigation.goBack()}
-              style={[Styles.button, { backgroundColor: item.color }]}>
-              <Text style={Styles.buttonText}>{item.name}</Text>
-            </TouchableOpacity>
-          ))}
-        </View>
+        <ScrollView style={{ paddingTop: 20 }}>
+          <View style={Styles.categoryContainer}>
+            {data.map(item => (
+              <TouchableOpacity
+                key={item.Id}
+                onPress={() => navigation.navigate('CreateProduct')}
+                style={[Styles.button, { backgroundColor: item.color }]}>
+                <Text style={Styles.buttonText}>{item.name}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </ScrollView>
         <TouchableOpacity
           onPress={() => navigation.navigate('Home')}
           style={[Styles.button, { marginTop: 20 }]}>

@@ -1,6 +1,6 @@
 import React from 'react';
-import {View, Image, TouchableOpacity, Text} from 'react-native';
-import {IRef} from '../../Helpers/Interfaces';
+import { View, Image, TouchableOpacity, Text } from 'react-native';
+import { IProduct, IRef } from '../../Helpers/Interfaces';
 import IconI from 'react-native-vector-icons/Ionicons';
 import IconMCI from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -8,11 +8,13 @@ import Styles from './styles';
 import Colors from '../../Screen/Theme/Colors';
 
 interface IRefmaxItem {
-  refmax: IRef;
+  item: IProduct;
   onRefPress: Function;
 }
 
-const RefmaxItem = ({refmax, onRefPress}: IRefmaxItem) => {
+const RefmaxItem = ({ item, onRefPress }: IRefmaxItem) => {
+  console.log('aaaaaa ',item)
+
   return (
     <TouchableOpacity
       onPress={() => onRefPress()}
@@ -21,17 +23,17 @@ const RefmaxItem = ({refmax, onRefPress}: IRefmaxItem) => {
       <View style={Styles.subContainer}>
         <View style={Styles.imageContainer}>
           <Image
-            resizeMode="cover"
+            resizeMode="contain"
             style={Styles.image}
-            source={{uri: refmax.images[0]}}
+            source={{ uri: item?.productImages[0] }}
           />
         </View>
         <View style={Styles.infoContainer}>
           <View style={Styles.infoTextContainer}>
-            <Text style={Styles.titleText}>{refmax.title}</Text>
-            <Text style={Styles.priceText}>{refmax.price} ₺</Text>
+            <Text style={Styles.titleText}>{item.productTitle}</Text>
+            <Text style={Styles.priceText}>{item.productPrice} ₺</Text>
             <Text style={Styles.locationText}>
-              {refmax.state + ', ' + refmax.district}
+              {item.productCity + ', ' + item.productDistrict}
             </Text>
             <Text style={Styles.locationText}>{'Bugün, 20:01'}</Text>
           </View>
